@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Live - Transform Research into Content</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <img src="./logo.png" alt="Science Live Logo">
+            </div>
+            <h1 class="title">Science Live</h1>
+            <p class="subtitle">Transform your research into engaging content</p>
+        </div>
+
+        <!-- Main Interface -->
+        <div class="main-card">
+            <!-- Progress Indicator -->
+            <div class="progress-container">
+                <div class="progress-steps">
+                    <div class="progress-line">
+                        <div class="progress-line-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="step active" data-step="0">1</div>
+                    <div class="step" data-step="1">2</div>
+                    <div class="step" data-step="2">3</div>
+                    <div class="step" data-step="3">4</div>
+                </div>
+                <div class="step-labels">
+                    <div class="step-label active">Ask Question</div>
+                    <div class="step-label">Add Research</div>
+                    <div class="step-label">Choose Format</div>
+                    <div class="step-label">Generate</div>
+                </div>
+            </div>
+
+            <!-- Step 0: Chatbot Question Interface -->
+            <div class="section active" id="step-0">
+                <h2 class="section-title">Ask Your Research Question</h2>
+                <p class="section-description">Ask me anything about research topics and I'll find relevant nanopublications for you</p>
+                
+                <div class="chatbot-container">
+                    <div class="chat-messages" id="chat-messages">
+                        <div class="chat-message bot-message">
+            <div class="icon-wrapper ai-icon-boxed">
+                <svg viewBox="0 0 24 24" fill="blue">
+                    <!-- Three connected nodes -->
+                    <circle cx="12" cy="8" r="3"/>
+                    <circle cx="7" cy="16" r="3"/>
+                    <circle cx="17" cy="16" r="3"/>
+                    <!-- Connections -->
+                    <path d="M12 11v2M12 13l-3.5 2M12 13l3.5 2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <!-- AI dots -->
+                    <circle cx="12" cy="8" r="1" fill="white"/>
+                    <circle cx="7" cy="16" r="1" fill="white"/>
+                    <circle cx="17" cy="16" r="1" fill="white"/>
+                </svg>
+            </div>
+
+                            <div class="message-content">
+                                <p>Hi! I'm your research assistant. Ask me any question about scientific topics and I'll help you find relevant nanopublications to create content from.</p>
+                                <p class="message-examples">
+                                    <strong>Try asking:</strong><br>
+                                    • "What are the latest findings on climate change?"<br>
+                                    • "How does machine learning improve drug discovery?"<br>
+                                    • "What are the benefits of high-performance computing in research?"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <div class="chat-input-container">
+                            <textarea id="user-question" class="chat-input" 
+                                   placeholder="Ask your research question here..."
+                                   rows="3"
+                                   onkeypress="handleChatKeyPress(event)"></textarea>
+                            <button type="button" class="chat-send-btn" onclick="sendQuestion()">
+                                <span class="send-icon">📤</span>
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-questions">
+                    <div class="quick-questions-label">Quick questions to get started:</div>
+                    <div class="quick-question-buttons">
+                        <button class="quick-question-btn" onclick="askQuickQuestion('What are the latest developments in artificial intelligence research?')">
+                            🤖 AI Research
+                        </button>
+                        <button class="quick-question-btn" onclick="askQuickQuestion('How is climate change affecting global ecosystems?')">
+                            🌍 Climate Change
+                        </button>
+                        <button class="quick-question-btn" onclick="askQuickQuestion('What are the recent breakthroughs in cancer treatment?')">
+                            🧬 Medical Research
+                        </button>
+                        <button class="quick-question-btn" onclick="askQuickQuestion('How does quantum computing work and what are its applications?')">
+                            ⚛️ Quantum Computing
+                        </button>
+                    </div>
+                </div>
+
+                <div id="search-results-container" class="search-results-container" style="display: none;">
+                    <div class="search-results-header">
+                        <h3>Found Relevant Research</h3>
+                        <p>Select the nanopublications you want to use:</p>
+                    </div>
+                    <div id="search-results" class="search-results">
+                        <!-- Search results will be populated here -->
+                    </div>
+                    <div class="search-results-actions">
+                        <button type="button" class="btn btn-secondary" onclick="askNewQuestion()">🔄 Ask New Question</button>
+                        <button type="button" class="btn btn-primary" onclick="useSelectedNanopubs()">Use Selected →</button>
+                    </div>
+                </div>
+
+                <div class="skip-chat">
+                    <button type="button" class="btn btn-secondary" onclick="skipChat()">Skip Chat - Add URLs Manually</button>
+                </div>
+            </div>
+
+            <!-- Step 1: Research Input -->
+            <div class="section" id="step-1">
+                <h2 class="section-title">Add Your Research</h2>
+                <p class="section-description">Paste the URLs of your nanopublications below</p>
+                
+                <div class="research-input">
+                    <label class="input-label">Nanopublication URLs</label>
+                    <div id="nanopub-inputs">
+                        <!-- Dynamic inputs will be added here -->
+                    </div>
+                    <button type="button" class="add-source-btn" onclick="addNanopubInput()">
+                        + Add another source
+                    </button>
+                </div>
+
+                <div class="examples">
+                    <div class="examples-label">Try these examples:</div>
+                    <div class="example-links">
+                        <a href="#" class="example-link" onclick="loadExample('hpc')">HPC Research</a>
+                        <a href="#" class="example-link" onclick="loadExample('weather')">Weather Data</a>
+                        <a href="#" class="example-link" onclick="loadExample('citation')">Citation Study</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Format Selection -->
+            <div class="section" id="step-2">
+                <h2 class="section-title">Choose Content Format</h2>
+                <p class="section-description">What type of content would you like to create?</p>
+                
+                <div class="format-grid">
+                    <label class="format-option">
+                        <input type="radio" name="format" value="social" checked>
+                        <div class="format-card">
+                            <div class="format-header">
+                                <span class="format-icon">📱</span>
+                                <span class="format-title">Social Media Post</span>
+                            </div>
+                            <p class="format-description">Perfect for LinkedIn, Twitter, and other platforms. Engaging and shareable.</p>
+                        </div>
+                    </label>
+                    
+                    <label class="format-option">
+                        <input type="radio" name="format" value="summary">
+                        <div class="format-card">
+                            <div class="format-header">
+                                <span class="format-icon">📄</span>
+                                <span class="format-title">Executive Summary</span>
+                            </div>
+                            <p class="format-description">Professional summary for reports, presentations, and business use.</p>
+                        </div>
+                    </label>
+                    
+                    <label class="format-option">
+                        <input type="radio" name="format" value="article">
+                        <div class="format-card">
+                            <div class="format-header">
+                                <span class="format-icon">📰</span>
+                                <span class="format-title">Blog Article</span>
+                            </div>
+                            <p class="format-description">Detailed article perfect for blogs, newsletters, and publications.</p>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Step 3: Generate -->
+            <div class="section" id="step-3">
+                <h2 class="section-title">Generate Content</h2>
+                <p class="section-description">Ready to transform your research into engaging content?</p>
+                
+                <div class="status-container" id="status-container"></div>
+                
+                <div class="action-buttons">
+                    <button class="btn btn-secondary" onclick="goBack()">← Back</button>
+                    <button class="btn btn-primary" id="generate-btn" onclick="generateContent()">
+                        Generate Content
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="action-buttons" id="nav-buttons" style="display: none;">
+                <button class="btn btn-secondary" onclick="previousStep()">← Previous</button>
+                <button class="btn btn-primary" onclick="nextStep()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Enhanced Results Section with Social Media Sharing -->
+        <div class="results-section" id="results-section">
+            <div class="results-header">
+                <div class="success-icon">✓</div>
+                <h2>Content Generated!</h2>
+                <p>Your research has been transformed into engaging content</p>
+            </div>
+            
+            <div class="content-preview" id="generated-content">
+                <!-- Generated content will appear here -->
+            </div>
+            
+            <!-- Social Media Sharing Buttons -->
+            <div class="sharing-section" id="sharing-section">
+                <!-- Sharing buttons will be added here dynamically -->
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="generateNew()">🔄 Start Over</button>
+                <button class="btn btn-primary" onclick="copyContent()">📋 Copy Content</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0; // Start with chatbot
+        let nanopubCounter = 0;
+        let currentFormat = 'social';
+        let generatedContent = '';
+        let selectedNanopubs = [];
+        
+        // Example nanopub URLs
+        const examples = {
+            hpc: 'https://w3id.org/np/RAeCQAe0XKmQHnwJhMe6Sj0hinsROZdj068Hoy-MmUGY4',
+            weather: 'https://w3id.org/np/RAaCbrybsINHksiFpzcamlUkSU9-5_u3WtcP4hC3jbkQ4',
+            citation: 'https://w3id.org/np/RA5aU0Cg0MKc5moV6xOk_ThBwxah5xipXgz6sy0F29N2Q'
+        };
+
+        // Mock search results for chatbot
+        const mockSearchResults = {
+            'artificial intelligence': [
+                {
+                    uri: 'https://w3id.org/np/RAeCQAe0XKmQHnwJhMe6Sj0hinsROZdj068Hoy-MmUGY4',
+                    title: 'AI-Powered Drug Discovery Framework',
+                    description: 'Novel machine learning approaches for pharmaceutical research and development',
+                    authors: ['Dr. AI Research'],
+                    date: '2024-01-15'
+                },
+                {
+                    uri: 'https://w3id.org/np/RAcHq3aJqQXP7xVVhgOWh29G5T7n7bBK0nqEfqFHveMHs',
+                    title: 'Deep Learning in Medical Diagnosis',
+                    description: 'Applications of neural networks for automated medical image analysis',
+                    authors: ['Dr. Deep Learning'],
+                    date: '2024-02-20'
+                }
+            ],
+            'climate change': [
+                {
+                    uri: 'https://w3id.org/np/RAaCbrybsINHksiFpzcamlUkSU9-5_u3WtcP4hC3jbkQ4',
+                    title: 'Global Climate Data Analysis',
+                    description: 'Comprehensive study of climate change patterns and environmental impact',
+                    authors: ['Dr. Climate'],
+                    date: '2024-03-10'
+                }
+            ],
+            'cancer': [
+                {
+                    uri: 'https://w3id.org/np/RA5aU0Cg0MKc5moV6xOk_ThBwxah5xipXgz6sy0F29N2Q',
+                    title: 'Breakthrough Cancer Treatment Protocol',
+                    description: 'Innovative immunotherapy approaches for cancer treatment',
+                    authors: ['Dr. Oncology'],
+                    date: '2024-04-05'
+                }
+            ],
+            'quantum computing': [
+                {
+                    uri: 'https://w3id.org/np/RAeCQAe0XKmQHnwJhMe6Sj0hinsROZdj068Hoy-MmUGY4',
+                    title: 'Quantum Computing Applications in Science',
+                    description: 'Exploring quantum algorithms for scientific computation',
+                    authors: ['Dr. Quantum'],
+                    date: '2024-05-12'
+                }
+            ]
+        };
+
+        // Sample content for demo
+        const sampleContent = {
+            social: `🔬 Exciting research reveals new insights into high-performance computing!
+
+Recent nanopublication data shows significant improvements in processing speeds and efficiency. This could revolutionize how we approach large-scale scientific computing.
+
+Key findings:
+✅ 40% improvement in data throughput
+✅ Better resource utilization  
+✅ Reduced processing times
+
+#Research #HPC #Science #Innovation`,
+
+            summary: `Executive Summary: High-Performance Computing Research
+
+Recent nanopublication research demonstrates significant advances in computing efficiency and performance optimization. Key findings include substantial improvements in data throughput, resource utilization, and processing speeds.
+
+These developments have important implications for scientific computing applications and could drive innovation across multiple research domains. Organizations should consider these findings when planning computational infrastructure upgrades.`,
+
+            article: `Breakthrough in High-Performance Computing: New Research Reveals Significant Performance Gains
+
+Introduction
+
+Recent research published in nanopublication format has revealed significant advances in high-performance computing (HPC) capabilities. The findings suggest substantial improvements in computational efficiency that could transform scientific research methodologies.
+
+Key Findings
+
+The research demonstrates remarkable improvements in several critical areas:
+
+Data Throughput Enhancement
+Studies show up to 40% improvement in data processing speeds, enabling faster analysis of large datasets commonly used in scientific research.
+
+Resource Optimization
+Better utilization of computing resources leads to more efficient operations and reduced computational costs for research institutions.
+
+Processing Speed Improvements
+Significant reductions in processing times enable researchers to iterate faster and explore more hypotheses within existing time constraints.
+
+Implications
+
+These advances in HPC technology have far-reaching implications for the scientific community. Faster processing capabilities enable more complex simulations, larger dataset analysis, and accelerated research timelines.
+
+Conclusion
+
+The demonstrated improvements in HPC performance represent a significant step forward for computational science. Research institutions should evaluate these advances when planning future computational infrastructure investments.`
+        };
+
+        // Chatbot functionality
+        function handleChatKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                sendQuestion();
+            }
+        }
+
+        function askQuickQuestion(question) {
+            document.getElementById('user-question').value = question;
+            sendQuestion();
+        }
+
+        async function sendQuestion() {
+            const questionInput = document.getElementById('user-question');
+            const question = questionInput.value.trim();
+            
+            if (!question) {
+                alert('Please enter a question');
+                return;
+            }
+
+            // Add user message to chat
+            addChatMessage(question, 'user');
+            
+            // Clear input
+            questionInput.value = '';
+            
+            // Show bot typing indicator
+            showBotTyping();
+            
+            try {
+                // Simulate AI processing time
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Parse the question and extract search terms
+                const searchTerms = parseQuestionForSearch(question);
+                
+                // Show bot response with extracted terms
+                const botResponse = generateBotResponse(question, searchTerms);
+                addChatMessage(botResponse, 'bot');
+                
+                // Automatically search for nanopubs
+                await searchNanopubsFromQuestion(searchTerms);
+                
+            } catch (error) {
+                console.error('Chat error:', error);
+                addChatMessage('Sorry, I had trouble processing your question. Please try again.', 'bot');
+            } finally {
+                hideBotTyping();
+            }
+        }
+
+        function addChatMessage(message, sender) {
+            const chatMessages = document.getElementById('chat-messages');
+            const messageClass = sender === 'user' ? 'user-message' : 'bot-message';
+            const avatar = sender === 'user' ? '👤' : '🤖';
+            
+            const messageHtml = `
+                <div class="chat-message ${messageClass}">
+                    <div class="message-avatar">${avatar}</div>
+                    <div class="message-content">
+                        <p>${message}</p>
+                    </div>
+                </div>
+            `;
+            
+            chatMessages.insertAdjacentHTML('beforeend', messageHtml);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showBotTyping() {
+            const chatMessages = document.getElementById('chat-messages');
+            const typingHtml = `
+                <div class="chat-message bot-message typing-indicator" id="typing-indicator">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            chatMessages.insertAdjacentHTML('beforeend', typingHtml);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideBotTyping() {
+            const typingIndicator = document.getElementById('typing-indicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function parseQuestionForSearch(question) {
+            const lowerQuestion = question.toLowerCase();
+            
+            // Common research keywords mapping
+            const keywordMappings = {
+                'artificial intelligence': ['artificial intelligence', 'AI', 'machine learning', 'deep learning', 'neural network'],
+                'climate change': ['climate change', 'global warming', 'environmental', 'ecosystem'],
+                'cancer': ['cancer', 'oncology', 'tumor', 'treatment'],
+                'quantum computing': ['quantum computing', 'quantum', 'computing']
+            };
+            
+            // Find matching keywords
+            for (const [key, terms] of Object.entries(keywordMappings)) {
+                if (terms.some(term => lowerQuestion.includes(term))) {
+                    return key;
+                }
+            }
+            
+            // Default fallback
+            return question.split(' ').slice(0, 3).join(' ');
+        }
+
+        function generateBotResponse(question, searchTerms) {
+            const responses = [
+                `Great question! I found that your question relates to <strong>${searchTerms}</strong>. Let me search for relevant nanopublications about this topic.`,
+                `Interesting! Based on your question, I'll look for research on <strong>${searchTerms}</strong>. Searching nanopublications now...`,
+                `I understand you're asking about <strong>${searchTerms}</strong>. Let me find the most relevant research publications for you.`
+            ];
+            
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        async function searchNanopubsFromQuestion(searchTerms) {
+            try {
+                // Use mock search results
+                const results = mockSearchResults[searchTerms] || [];
+                
+                if (results.length > 0) {
+                    displaySearchResults(results, searchTerms);
+                    addChatMessage(`Perfect! I found <strong>${results.length}</strong> relevant nanopublications about ${searchTerms}. Please select the ones you'd like to use for content generation.`, 'bot');
+                } else {
+                    addChatMessage(`I couldn't find specific nanopublications for "${searchTerms}". You can try asking a different question or search manually.`, 'bot');
+                }
+                
+            } catch (error) {
+                console.error('Search error:', error);
+                addChatMessage('Sorry, I had trouble searching for nanopublications. Please try again.', 'bot');
+            }
+        }
+
+        function displaySearchResults(results, query) {
+            const container = document.getElementById('search-results-container');
+            const resultsDiv = document.getElementById('search-results');
+            
+            resultsDiv.innerHTML = results.map((result, index) => `
+                <div class="search-result-item">
+                    <label class="result-checkbox">
+                        <input type="checkbox" value="${result.uri}" onchange="toggleNanopubSelection(this, ${index})">
+                        <div class="result-content">
+                            <h4 class="result-title">${result.title}</h4>
+                            <p class="result-description">${result.description}</p>
+                            <div class="result-meta">
+                                <span class="result-authors">By: ${result.authors.join(', ')}</span>
+                                <span class="result-date">Date: ${result.date}</span>
+                            </div>
+                            <div class="result-uri">${result.uri}</div>
+                        </div>
+                    </label>
+                </div>
+            `).join('');
+            
+            container.style.display = 'block';
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleNanopubSelection(checkbox, index) {
+            const uri = checkbox.value;
+            
+            if (checkbox.checked) {
+                if (!selectedNanopubs.includes(uri)) {
+                    selectedNanopubs.push(uri);
+                }
+            } else {
+                selectedNanopubs = selectedNanopubs.filter(url => url !== uri);
+            }
+            
+            const useBtn = document.querySelector('.search-results-actions .btn-primary');
+            useBtn.disabled = selectedNanopubs.length === 0;
+            useBtn.textContent = selectedNanopubs.length > 0 ? 
+                `Use Selected (${selectedNanopubs.length}) →` : 'Use Selected →';
+        }
+
+        function useSelectedNanopubs() {
+            if (selectedNanopubs.length === 0) {
+                alert('Please select at least one nanopublication');
+                return;
+            }
+            
+            // Move to next step and populate URLs
+            currentStep = 1;
+            showStep(currentStep);
+            
+            // Clear existing inputs and populate with selected nanopubs
+            document.getElementById('nanopub-inputs').innerHTML = '';
+            nanopubCounter = 0;
+            
+            selectedNanopubs.forEach(uri => {
+                addNanopubInput(uri);
+            });
+        }
+
+        function askNewQuestion() {
+            document.getElementById('user-question').value = '';
+            document.getElementById('search-results-container').style.display = 'none';
+            selectedNanopubs = [];
+        }
+
+        function skipChat() {
+            currentStep = 1;
+            showStep(currentStep);
+        }
+
+        // Social Media Sharing Functions with Nanopub URLs
+        function shareToLinkedIn() {
+            const urls = getAllNanopubUrls();
+            const sourceText = urls.length > 0 ? `\n\nSources:\n${urls.join('\n')}` : '';
+            const fullContent = generatedContent + sourceText;
+            const text = encodeURIComponent(fullContent);
+            const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(window.location.href)}&text=${text}`;
+            window.open(url, 'linkedin-share', 'width=600,height=400,scrollbars=yes,resizable=yes');
+        }
+
+        function shareToTwitter() {
+            const urls = getAllNanopubUrls();
+            const sourceText = urls.length > 0 ? `\n\nSources:\n${urls.join('\n')}` : '';
+            const fullContent = generatedContent + sourceText;
+            const text = encodeURIComponent(fullContent);
+            const url = `https://twitter.com/intent/tweet?text=${text}`;
+            window.open(url, 'twitter-share', 'width=600,height=400,scrollbars=yes,resizable=yes');
+        }
+
+        function shareToBluesky() {
+            const urls = getAllNanopubUrls();
+            const sourceText = urls.length > 0 ? `\n\nSources:\n${urls.join('\n')}` : '';
+            const fullContent = generatedContent + sourceText;
+            const text = encodeURIComponent(fullContent);
+            const url = `https://bsky.app/intent/compose?text=${text}`;
+            window.open(url, 'bluesky-share', 'width=600,height=400,scrollbars=yes,resizable=yes');
+        }
+
+        function shareToMastodon() {
+            showMastodonModal();
+        }
+
+        function showMastodonModal() {
+            const urls = getAllNanopubUrls();
+            const sourceText = urls.length > 0 ? `\n\nSources:\n${urls.join('\n')}` : '';
+            const fullContentForMastodon = generatedContent + sourceText;
+            
+            const modal = document.createElement('div');
+            modal.className = 'mastodon-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Share on Mastodon</h3>
+                        <button onclick="closeMastodonModal()" class="close-btn">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Enter your Mastodon instance URL:</p>
+                        <input type="text" id="mastodon-instance" placeholder="https://mastodon.social" class="mastodon-input">
+                        <div class="modal-actions">
+                            <button onclick="closeMastodonModal()" class="btn btn-secondary">Cancel</button>
+                            <button onclick="proceedToMastodon('${encodeURIComponent(fullContentForMastodon)}')" class="btn btn-primary">Share</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            modal.style.display = 'flex';
+            
+            setTimeout(() => {
+                document.getElementById('mastodon-instance').focus();
+            }, 100);
+        }
+
+        function closeMastodonModal() {
+            const modal = document.querySelector('.mastodon-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        function proceedToMastodon(encodedContent) {
+            const instanceInput = document.getElementById('mastodon-instance');
+            const instance = instanceInput.value.trim();
+            
+            if (!instance) {
+                alert('Please enter your Mastodon instance URL');
+                return;
+            }
+            
+            const normalizedInstance = instance.replace(/\/$/, '');
+            const url = `${normalizedInstance}/share?text=${encodedContent}`;
+            
+            window.open(url, 'mastodon-share', 'width=600,height=400,scrollbars=yes,resizable=yes');
+            closeMastodonModal();
+        }
+
+        function createSharingButtons(format) {
+            const sharingSection = document.getElementById('sharing-section');
+            
+            let buttons = '<div class="content-sharing-buttons">';
+            
+            if (format === 'social') {
+                buttons += `
+                    <button onclick="shareToLinkedIn()" class="btn btn-linkedin">
+                        💼 LinkedIn
+                    </button>
+                    <button onclick="shareToTwitter()" class="btn btn-twitter">
+                        🐦 Twitter/X
+                    </button>
+                    <button onclick="shareToBluesky()" class="btn btn-bluesky">
+                        🦋 Bluesky
+                    </button>
+                    <button onclick="shareToMastodon()" class="btn btn-mastodon">
+                        🐘 Mastodon
+                    </button>
+                `;
+            } else if (format === 'summary') {
+                buttons += `
+                    <button onclick="shareToLinkedIn()" class="btn btn-linkedin">
+                        💼 LinkedIn
+                    </button>
+                `;
+            }
+            
+            buttons += '</div>';
+            
+            if (format !== 'article') {
+                sharingSection.innerHTML = buttons;
+            } else {
+                sharingSection.innerHTML = '';
+            }
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progress-fill');
+            const steps = document.querySelectorAll('.step');
+            const labels = document.querySelectorAll('.step-label');
+            
+            // Update progress bar
+            const progressPercent = (currentStep / 3) * 100;
+            progressFill.style.width = progressPercent + '%';
+            
+            // Update step indicators
+            steps.forEach((step, index) => {
+                step.classList.remove('active', 'completed');
+                
+                if (index < currentStep) {
+                    step.classList.add('completed');
+                } else if (index === currentStep) {
+                    step.classList.add('active');
+                }
+            });
+            
+            // Update labels
+            labels.forEach((label, index) => {
+                label.classList.remove('active');
+                if (index === currentStep) {
+                    label.classList.add('active');
+                }
+            });
+        }
+
+        function showStep(step) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show current section
+            document.getElementById(`step-${step}`).classList.add('active');
+            
+            // Update navigation
+            const navButtons = document.getElementById('nav-buttons');
+            const stepNavigation = document.querySelector('#step-3 .action-buttons');
+            
+            if (step === 3) {
+                navButtons.style.display = 'none';
+                if (stepNavigation) stepNavigation.style.display = 'flex';
+            } else {
+                navButtons.style.display = 'flex';
+                if (stepNavigation) stepNavigation.style.display = 'none';
+            }
+            
+            updateProgress();
+        }
+
+        function nextStep() {
+            if (currentStep < 3) {
+                if (validateCurrentStep()) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        }
+
+        function goBack() {
+            previousStep();
+        }
+
+        function validateCurrentStep() {
+            if (currentStep === 1) {
+                const urls = getAllNanopubUrls();
+                if (urls.length === 0) {
+                    showStatus('Please add at least one nanopublication URL', 'error');
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function createNanopubInput(index = nanopubCounter, value = '') {
+            return `
+                <input 
+                    type="url" 
+                    class="nanopub-input" 
+                    placeholder="https://w3id.org/np/..."
+                    value="${value}"
+                    data-index="${index}"
+                    oninput="validateNanopubInput(this)"
+                >
+            `;
+        }
+
+        function addNanopubInput(value = '') {
+            const container = document.getElementById('nanopub-inputs');
+            const newInput = createNanopubInput(nanopubCounter, value);
+            container.insertAdjacentHTML('beforeend', newInput);
+            
+            if (!value) {
+                const input = container.querySelector(`input[data-index="${nanopubCounter}"]`);
+                input.focus();
+            }
+            
+            nanopubCounter++;
+        }
+
+        function validateNanopubInput(input) {
+            const value = input.value.trim();
+            
+            if (!value) {
+                input.classList.remove('valid');
+            } else if (value.startsWith('http') && value.includes('w3id.org/np/')) {
+                input.classList.add('valid');
+            } else {
+                input.classList.remove('valid');
+            }
+        }
+
+        function getAllNanopubUrls() {
+            const inputs = document.querySelectorAll('.nanopub-input');
+            const urls = [];
+            
+            inputs.forEach(input => {
+                const value = input.value.trim();
+                if (value && value.startsWith('http')) {
+                    urls.push(value);
+                }
+            });
+            
+            return urls;
+        }
+
+        function loadExample(type) {
+            document.getElementById('nanopub-inputs').innerHTML = '';
+            nanopubCounter = 0;
+            addNanopubInput(examples[type]);
+            nextStep();
+        }
+
+        function showStatus(message, type = 'loading') {
+            const container = document.getElementById('status-container');
+            const spinner = type === 'loading' ? '<span class="spinner"></span>' : '';
+            container.innerHTML = `<div class="status-message status-${type}">${spinner}${message}</div>`;
+        }
+
+        function clearStatus() {
+            document.getElementById('status-container').innerHTML = '';
+        }
+
+        async function generateContent() {
+            const urls = getAllNanopubUrls();
+            const format = document.querySelector('input[name="format"]:checked').value;
+            
+            if (urls.length === 0) {
+                showStatus('Please add at least one nanopublication URL', 'error');
+                return;
+            }
+
+            const btn = document.getElementById('generate-btn');
+            btn.disabled = true;
+            btn.textContent = 'Generating...';
+            
+            showStatus(`Analyzing ${urls.length} research source${urls.length > 1 ? 's' : ''} and generating content...`);
+
+            try {
+                await new Promise(resolve => setTimeout(resolve, 3000));
+                showResults(format, urls.length);
+            } catch (error) {
+                showStatus('Sorry, there was an error. Please try again.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Generate Content';
+            }
+        }
+
+        function showResults(format, sourceCount) {
+            clearStatus();
+            
+            currentFormat = format;
+            generatedContent = sampleContent[format];
+            
+            document.getElementById('generated-content').textContent = generatedContent;
+            createSharingButtons(format);
+            
+            document.getElementById('results-section').style.display = 'block';
+            document.getElementById('results-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        function copyContent() {
+            const content = document.getElementById('generated-content').textContent;
+            navigator.clipboard.writeText(content).then(() => {
+                showStatus('Content copied to clipboard!', 'success');
+                setTimeout(clearStatus, 2000);
+            });
+        }
+
+        function generateNew() {
+            currentStep = 0;
+            document.getElementById('results-section').style.display = 'none';
+            document.getElementById('nanopub-inputs').innerHTML = '';
+            document.getElementById('sharing-section').innerHTML = '';
+            document.getElementById('search-results-container').style.display = 'none';
+            selectedNanopubs = [];
+            nanopubCounter = 0;
+            generatedContent = '';
+            currentFormat = 'social';
+            addNanopubInput();
+            showStep(0);
+            clearStatus();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            addNanopubInput();
+            showStep(0);
+        });
+    </script>
+
+    <!-- Chatbot Styling -->
+    <style>
+        .chatbot-container {
+            background: white;
+            border-radius: 16px;
+            border: 2px solid var(--gray-200);
+            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .chat-messages {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 1.5rem;
+            background: var(--gray-50);
+        }
+        
+        .chat-message {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.3s ease;
+        }
+        
+        .message-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+        
+        .bot-message .message-avatar {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        .user-message {
+            flex-direction: row-reverse;
+        }
+        
+        .user-message .message-avatar {
+            background: var(--primary-pink);
+            color: white;
+        }
+        
+        .message-content {
+            flex: 1;
+            background: white;
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-message .message-content {
+            background: var(--primary-pink);
+            color: white;
+        }
+        
+        .message-content p {
+            margin: 0 0 0.5rem 0;
+            line-height: 1.5;
+        }
+        
+        .message-examples {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .typing-dots {
+            display: flex;
+            gap: 0.25rem;
+            align-items: center;
+            height: 1.5rem;
+        }
+        
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray-400);
+            animation: typingDot 1.4s infinite ease-in-out;
+        }
+        
+        .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typingDot {
+            0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        
+        .chat-input-area {
+            padding: 1.5rem;
+            background: white;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .chat-input-container {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+        
+        .chat-input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 60px;
+            max-height: 120px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(11, 58, 103, 0.1);
+        }
+        
+        .chat-send-btn {
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-pink));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            min-height: 60px;
+        }
+        
+        .quick-questions {
+            margin-bottom: 2rem;
+        }
+        
+        .quick-questions-label {
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .quick-question-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .quick-question-btn {
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .quick-question-btn:hover {
+            border-color: var(--primary-blue);
+            background: var(--gray-50);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-results-container {
+            margin-top: 2rem;
+            background: white;
+            border-radius: 16px;
+            border: 2px solid var(--gray-200);
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-results {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .search-result-item {
+            border: 1px solid var(--gray-200);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-result-item:hover {
+            border-color: var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .result-content {
+            flex: 1;
+        }
+        
+        .result-title {
+            margin: 0 0 0.5rem 0;
+            color: var(--gray-900);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .result-description {
+            margin: 0 0 1rem 0;
+            color: var(--gray-600);
+            line-height: 1.5;
+        }
+        
+        .result-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .result-authors, .result-date {
+            font-size: 0.875rem;
+            color: var(--gray-500);
+        }
+        
+        .result-uri {
+            font-size: 0.875rem;
+            color: var(--primary-blue);
+            font-family: monospace;
+            background: var(--gray-50);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            word-break: break-all;
+        }
+        
+        .search-results-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 1.5rem;
+        }
+        
+        .skip-chat {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .content-sharing-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: var(--gray-50);
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .btn-linkedin {
+            background: #0077B5;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            min-width: 120px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-twitter {
+            background: #1DA1F2;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            min-width: 120px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-bluesky {
+            background: #00A8E8;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            min-width: 120px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-mastodon {
+            background: #6364FF;
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            min-width: 120px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .mastodon-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 400px;
+            width: 90%;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .mastodon-input {
+            width: 100%;
+            padding: 0.875rem;
+            border: 2px solid var(--gray-200);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: flex-end;
+        }
+        
+        @media (max-width: 768px) {
+            .chat-input-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .chat-send-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .quick-question-buttons {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-sharing-buttons {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .content-sharing-buttons .btn {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+    </style>
+</body>
+</html>
