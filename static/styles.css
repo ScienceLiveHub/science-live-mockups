@@ -1107,3 +1107,48 @@ body {
   color: #666666;
   cursor: not-allowed;
 }
+
+/* Container for each message */
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  margin: 8px 0;
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* User messages aligned right */
+.user-message {
+  background-color: var(--secondary-dark); /* pink */
+  color: var(--secondary-color); /* dark pink text */
+  margin-left: auto; /* push to right */
+  flex-direction: row-reverse; /* avatar on right */
+}
+
+/* Bot messages aligned left */
+.bot-message {
+  background-color: var(--gray-50); /* light gray */
+  color: var(--primary-color); /* dark gray text */
+  margin-right: auto; /* push to left */
+  flex-direction: row; /* avatar on left */
+}
+
+/* Avatar style */
+.message-avatar {
+  width: 36px;
+  height: 36px;
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* Message text */
+.message-content p {
+  margin: 0;
+  line-height: 1.4;
+}
