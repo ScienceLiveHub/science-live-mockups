@@ -296,6 +296,10 @@ body {
     margin-right: 0.75rem;
 }
 
+.dark-blue-icon {
+  color: var(--primary-color);
+}
+
 .format-title {
     font-size: 1.125rem;
     font-weight: 600;
@@ -1069,3 +1073,37 @@ body {
                 justify-content: center;
             }
         }
+
+
+.chat-send-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  padding: 10px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--secondary-color) !important; /* pink blue */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-send-btn .send-icon i {
+  font-size: 16px;
+}
+
+/* Hover and focus states */
+.chat-send-btn:hover,
+.chat-send-btn:focus {
+  background-color: var(--primary-color) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Optional: disabled state */
+.chat-send-btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+}
