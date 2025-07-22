@@ -160,15 +160,15 @@
             </div>
             
             <div class="search-input-group">
-                <textarea class="search-textarea" placeholder="Enter your research interests... e.g., 'CRISPR gene editing applications in cancer treatment' or 'sustainable energy storage using graphene'"></textarea>
+                <textarea class="search-textarea" placeholder="Enter your research interests... e.g., 'Zarr in operational Earth Observation systems' or 'Quantum compilers and libraries for scientific computing use cases'"></textarea>
                 <button class="analyze-btn" onclick="analyzeInput()">
                     <i class="fas fa-sparkles"></i> Analyze
                 </button>
             </div>
 
             <div style="display: flex; gap: 1rem; margin-top: 1rem;">
-                <button class="btn btn-secondary" onclick="loadExample('crispr')">
-                    <i class="fas fa-dna"></i> Try CRISPR Example
+                <button class="btn btn-secondary" onclick="loadExample('aiexp')">
+                    <i class="fas fa-dna"></i> Try AI Example
                 </button>
                 <button class="btn btn-secondary" onclick="loadExample('quantum')">
                     <i class="fas fa-atom"></i> Try Quantum Computing
@@ -289,9 +289,9 @@
 
         // Example inputs
         const examples = {
-            crispr: "CRISPR gene editing applications in cancer treatment, including CAR-T cell therapy enhancements and targeted tumor suppression",
-            quantum: "Quantum computing applications in drug discovery and molecular simulation for pharmaceutical development",
-            climate: "Carbon capture technologies using novel materials like MOFs and direct air capture systems"
+            aiexp: "To what extent are AI explainability frameworks integrated into environmental decision-making pipelines?",
+            quantum: "Are existing quantum compilers and libraries (like Qiskit, PennyLane, or QGrad) ready for scientific computing use cases, especially differential equation solvers?",
+            climate: "Which Zarr community standards (EOPF Zarr, GeoZarr, etc.) are currently adopted in Earth Observation?"
         };
 
         function loadExample(type) {
@@ -307,17 +307,63 @@
             document.querySelector('.analyze-btn').innerHTML = '<span class="loading"></span> Analyzing...';
 
             setTimeout(() => {
-                // Mock LLM analysis results
-                const mockTopics = [
-                    "CRISPR-Cas9 cancer therapy",
-                    "CAR-T cell enhancement",
-                    "Tumor suppressor gene editing",
-                    "Off-target CRISPR effects",
-                    "Base editing techniques",
-                    "Prime editing applications",
-                    "CRISPR delivery systems",
-                    "Clinical trial outcomes"
-                ];
+                // Mock LLM analysis results based on input
+                let mockTopics = [];
+                
+                const inputLower = input.toLowerCase();
+                
+                // AI Explainability topics
+                if (inputLower.includes('ai explainability') || inputLower.includes('environmental decision')) {
+                    mockTopics = [
+                        "SHAP/LIME integration in environmental models",
+                        "XAI frameworks for climate predictions",
+                        "Interpretable ML for biodiversity monitoring",
+                        "Explainable deep learning in earth observation",
+                        "AI transparency in policy making",
+                        "Feature importance in environmental risk assessment",
+                        "Model-agnostic explanation methods",
+                        "Stakeholder-friendly AI interpretability"
+                    ];
+                }
+                // Quantum Computing topics
+                else if (inputLower.includes('quantum') || inputLower.includes('qiskit') || inputLower.includes('pennylane')) {
+                    mockTopics = [
+                        "Qiskit optimization for scientific computing",
+                        "PennyLane quantum machine learning",
+                        "Quantum differential equation solvers",
+                        "Variational quantum eigensolver (VQE)",
+                        "Quantum approximate optimization (QAOA)",
+                        "Quantum circuit compilation efficiency",
+                        "Hybrid classical-quantum algorithms",
+                        "Quantum error mitigation techniques"
+                    ];
+                }
+                // Climate/Earth Observation topics
+                else if (inputLower.includes('zarr') || inputLower.includes('earth observation') || inputLower.includes('eopf')) {
+                    mockTopics = [
+                        "EOPF Zarr standardization progress",
+                        "GeoZarr community adoption",
+                        "Cloud-optimized geospatial formats",
+                        "Zarr in operational satellite systems",
+                        "Chunking strategies for EO data",
+                        "Zarr performance benchmarks",
+                        "Multi-dimensional array storage",
+                        "Interoperability with existing formats"
+                    ];
+                }
+                // Default/generic research topics
+                else {
+                    mockTopics = [
+                        "Research methodology frameworks",
+                        "Data collection standards",
+                        "Statistical analysis methods",
+                        "Peer review processes",
+                        "Research reproducibility",
+                        "Open science practices",
+                        "Collaborative research tools",
+                        "Research impact metrics"
+                    ];
+                }
 
                 displayTopics(mockTopics);
                 document.querySelector('.analyze-btn').innerHTML = '<i class="fas fa-sparkles"></i> Analyze';
@@ -377,26 +423,93 @@
         }
 
         function generateMockRadarData() {
-            const maturityLevels = ['ready', 'evaluate', 'monitor', 'rethink'];
-            const sectors = ['Concepts', 'Methods', 'Tools', 'Applications'];
+            const maturityLevels = ['ready', 'evaluate', 'monitor', 'open'];
+            const sectors = ['Claims', 'Data', 'Tools', 'Applications'];
             
             // Map topics to appropriate sectors based on their nature
             radarData = selectedTopics.map((topic, i) => {
                 let sector = sectors[i % sectors.length];
+                let maturity = maturityLevels[Math.floor(Math.random() * 4)];
+                const topicLower = topic.toLowerCase();
                 
-                // Intelligent sector assignment based on topic keywords
-                if (topic.toLowerCase().includes('therap') || topic.toLowerCase().includes('treatment') || topic.toLowerCase().includes('clinical')) {
-                    sector = 'Applications';
-                } else if (topic.toLowerCase().includes('technique') || topic.toLowerCase().includes('editing') || topic.toLowerCase().includes('method')) {
-                    sector = 'Methods';
-                } else if (topic.toLowerCase().includes('system') || topic.toLowerCase().includes('delivery')) {
+                // Intelligent sector and maturity assignment based on topic keywords
+                
+                // AI Explainability topics
+                if (topicLower.includes('shap') || topicLower.includes('lime') || topicLower.includes('xai')) {
                     sector = 'Tools';
-                } else if (topic.toLowerCase().includes('effect') || topic.toLowerCase().includes('mechanism')) {
-                    sector = 'Concepts';
+                    maturity = 'ready'; // These are established tools
+                } else if (topicLower.includes('framework') || topicLower.includes('method')) {
+                    sector = 'Claims';
+                    maturity = Math.random() > 0.5 ? 'evaluate' : 'monitor';
+                } else if (topicLower.includes('integration') || topicLower.includes('implementation')) {
+                    sector = 'Applications';
+                    maturity = 'evaluate';
+                } else if (topicLower.includes('transparency') || topicLower.includes('interpretability')) {
+                    sector = 'Claims';
+                    maturity = 'monitor';
                 }
                 
-                const maturity = maturityLevels[Math.floor(Math.random() * 4)];
-                const angle = (i / selectedTopics.length) * 360;
+                // Quantum Computing topics
+                else if (topicLower.includes('qiskit') || topicLower.includes('pennylane')) {
+                    sector = 'Tools';
+                    maturity = 'evaluate'; // Quantum tools are still emerging
+                } else if (topicLower.includes('vqe') || topicLower.includes('qaoa') || topicLower.includes('algorithm')) {
+                    sector = 'Claims';
+                    maturity = Math.random() > 0.5 ? 'monitor' : 'open';
+                } else if (topicLower.includes('solver') || topicLower.includes('optimization')) {
+                    sector = 'Applications';
+                    maturity = 'monitor';
+                } else if (topicLower.includes('quantum') && topicLower.includes('error')) {
+                    sector = 'Claims';
+                    maturity = 'open'; // Still theoretical
+                }
+                
+                // Climate/Earth Observation topics
+                else if (topicLower.includes('zarr') || topicLower.includes('geozarr') || topicLower.includes('eopf')) {
+                    sector = 'Tools';
+                    maturity = topicLower.includes('standardization') ? 'monitor' : 'evaluate';
+                } else if (topicLower.includes('chunking') || topicLower.includes('strategies') || topicLower.includes('benchmark')) {
+                    sector = 'Claims';
+                    maturity = 'evaluate';
+                } else if (topicLower.includes('operational') || topicLower.includes('satellite')) {
+                    sector = 'Data';
+                    maturity = 'ready';
+                } else if (topicLower.includes('interoperability') || topicLower.includes('adoption')) {
+                    sector = 'Claims';
+                    maturity = 'monitor';
+                }
+                
+                // Generate appropriate metrics based on maturity
+                let endorsements, reproductions, citations;
+                switch(maturity) {
+                    case 'ready':
+                        endorsements = 30 + Math.floor(Math.random() * 70);
+                        reproductions = 5 + Math.floor(Math.random() * 15);
+                        citations = 50 + Math.floor(Math.random() * 150);
+                        break;
+                    case 'evaluate':
+                        endorsements = 15 + Math.floor(Math.random() * 35);
+                        reproductions = 2 + Math.floor(Math.random() * 8);
+                        citations = 20 + Math.floor(Math.random() * 80);
+                        break;
+                    case 'monitor':
+                        endorsements = 5 + Math.floor(Math.random() * 20);
+                        reproductions = Math.floor(Math.random() * 5);
+                        citations = 5 + Math.floor(Math.random() * 45);
+                        break;
+                    case 'open':
+                        endorsements = Math.floor(Math.random() * 10);
+                        reproductions = Math.floor(Math.random() * 3);
+                        citations = Math.floor(Math.random() * 20);
+                        break;
+                }
+                
+                // Calculate angle for even distribution
+                const sectorIndex = sectors.indexOf(sector);
+                const sectorAngle = (sectorIndex / sectors.length) * 360;
+                const sectorRange = 360 / sectors.length;
+                const offsetWithinSector = (Math.random() - 0.5) * sectorRange * 0.8;
+                const angle = sectorAngle + offsetWithinSector;
                 
                 return {
                     id: `np-${Date.now()}-${i}`,
@@ -405,11 +518,11 @@
                     maturity: maturity,
                     maturityScore: maturityLevels.indexOf(maturity) + 1,
                     angle: angle,
-                    endorsements: Math.floor(Math.random() * 50),
-                    reproductions: Math.floor(Math.random() * 10),
-                    citations: Math.floor(Math.random() * 100),
-                    hasData: Math.random() > 0.3,
-                    hasSoftware: Math.random() > 0.5
+                    endorsements: endorsements,
+                    reproductions: reproductions,
+                    citations: citations,
+                    hasData: maturity === 'ready' ? Math.random() > 0.2 : Math.random() > 0.6,
+                    hasSoftware: maturity === 'ready' ? Math.random() > 0.3 : Math.random() > 0.7
                 };
             });
         }
@@ -485,14 +598,7 @@
                 text.setAttribute('font-weight', '600');
                 text.setAttribute('font-size', '14');
                 
-                // Add emoji icons for each sector
-                const sectorIcons = {
-                    'Concepts': '💡 ',
-                    'Methods': '🔬 ',
-                    'Tools': '🛠️ ',
-                    'Applications': '🚀 '
-                };
-                text.textContent = sectorIcons[sector] + sector;
+                text.textContent = sector;
                 svg.appendChild(text);
             });
             
@@ -501,7 +607,7 @@
                 'ready': '#10b981',
                 'evaluate': '#3b82f6',
                 'monitor': '#f59e0b',
-                'rethink': '#ff6b6b'
+                'open': '#ff6b6b'
             };
             
             radarData.forEach((item, i) => {
