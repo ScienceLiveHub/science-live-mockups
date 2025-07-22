@@ -3,142 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Science Live - Transform Research into Content</title>
+    <title>Science Live - Contributor Radar</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/contributor-radar.css">
 </head>
 <body>
     <div class="container">
         <!-- Navigation bar -->
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-brand">
-            <a href="https://sciencelivehub.github.io" class="brand-link">
-                <img src="./static/network-logo.png" alt="Science Live Logo" class="nav-logo">
-            </a>
-    <div class="brand-name">
-        <span class="brand-text">Science</span> <span class="brand-live">Live</span>
-    </div>
-
-        </div>
-
-        <div class="nav-menu">
-            <div class="nav-dropdown">
-                <button class="nav-link dropdown-toggle">
-                    Explore
-                    <svg class="dropdown-arrow" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
-                    </svg>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://sciencelivehub.github.io/science-live-mockups/" class="dropdown-item">
-            <div class="icon-wrapper ">
-                <svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
-                    <!-- Three connected nodes -->
-                    <circle cx="12" cy="8" r="3"/>
-                    <circle cx="7" cy="16" r="3"/>
-                    <circle cx="17" cy="16" r="3"/>
-                    <!-- Connections -->
-                    <path d="M12 11v2M12 13l-3.5 2M12 13l3.5 2" stroke="currentColor" stroke-width="2" fill="none"/>
-                    <!-- AI dots -->
-                    <circle cx="12" cy="8" r="1" fill="white"/>
-                    <circle cx="7" cy="16" r="1" fill="white"/>
-                    <circle cx="17" cy="16" r="1" fill="white"/>
-                </svg>
-                   Content Generator (AI-powered) 
-            </div>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="https://sciencelivehub.github.io" class="brand-link">
+                        <img src="./static/network-logo.png" alt="Science Live Logo" class="nav-logo">
                     </a>
-                    <a href="research-radar.html" class="dropdown-item">
-            <div class="icon-wrapper ">
-<svg viewBox="0 0 24 24" fill="#051d40" style="width: 25px; height: 25px;">
-  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
-  <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
-  <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
-</svg>
+                    <div class="brand-name">
+                        <span class="brand-text">Science</span> <span class="brand-live">Live</span>
+                    </div>
+                </div>
 
-                    Research Radar
-            </div>
-                    </a>
-                    <a href="contributor-radar.html" class="dropdown-item">
-            <div class="icon-wrapper ">
-<svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
-  <!-- Central user -->
-  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
-  <path d="M8 20c0-2 8-2 8 0v2H8v-2z" stroke="currentColor" stroke-width="2" fill="none"/>
-  <!-- Left user -->
-  <circle cx="6" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
-  <path d="M4 17c0-1 4-1 4 0v1H4v-1z" fill="none" stroke="currentColor" stroke-width="2"/>
-  <!-- Right user -->
-  <circle cx="18" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
-  <path d="M16 17c0-1 4-1 4 0v1h-4v-1z" fill="none" stroke="currentColor" stroke-width="2"/>
-</svg>
+                <div class="nav-menu">
+                    <div class="nav-dropdown">
+                        <button class="nav-link dropdown-toggle">
+                            Explore
+                            <svg class="dropdown-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://sciencelivehub.github.io/science-live-mockups/" class="dropdown-item">
+                                <div class="icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
+                                        <circle cx="12" cy="8" r="3"/>
+                                        <circle cx="7" cy="16" r="3"/>
+                                        <circle cx="17" cy="16" r="3"/>
+                                        <path d="M12 11v2M12 13l-3.5 2M12 13l3.5 2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <circle cx="12" cy="8" r="1" fill="white"/>
+                                        <circle cx="7" cy="16" r="1" fill="white"/>
+                                        <circle cx="17" cy="16" r="1" fill="white"/>
+                                    </svg>
+                                    Content Generator (AI-powered)
+                                </div>
+                            </a>
+                            <a href="research-radar.html" class="dropdown-item">
+                                <div class="icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="#051d40" style="width: 25px; height: 25px;">
+                                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+                                    </svg>
+                                    Research Radar
+                                </div>
+                            </a>
+                            <a href="contributor-radar.html" class="dropdown-item">
+                                <div class="icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
+                                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <path d="M8 20c0-2 8-2 8 0v2H8v-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                        <circle cx="6" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M4 17c0-1 4-1 4 0v1H4v-1z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <circle cx="18" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+                                        <path d="M16 17c0-1 4-1 4 0v1h-4v-1z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                    </svg>
+                                    Contributor Radar
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-                    Contributor Radar
-            </div>
-</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-link dropdown-toggle">
+                            Create
+                            <svg class="dropdown-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                            </svg>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="https://nanodash.knowledgepixels.com/publish" class="dropdown-item">
+                                <div class="icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
+                                        <rect x="4" y="3" width="16" height="18" rx="2" fill="#be2e78"/>
+                                        <rect x="7" y="6" width="10" height="2" rx="1" fill="white"/>
+                                        <rect x="7" y="10" width="6" height="2" rx="1" fill="white"/>
+                                        <rect x="7" y="14" width="8" height="2" rx="1" fill="white"/>
+                                        <g transform="translate(14, 14)">
+                                            <rect x="0" y="0" width="8" height="8" rx="1" fill="white"/>
+                                            <path d="M2 6l4-4 2 2-4 4-2 0 0-2z" fill="#be2e78"/>
+                                            <path d="M5 3l1-1 2 2-1 1-2-2z" fill="#be2e78"/>
+                                        </g>
+                                        <circle cx="4" cy="6" r="1.5" fill="#4a9eff"/>
+                                        <circle cx="4" cy="10" r="1.5" fill="#4a9eff"/>
+                                        <circle cx="4" cy="14" r="1.5" fill="#4a9eff"/>
+                                        <path d="M4 7.5v1M4 11.5v1" stroke="#4a9eff" stroke-width="1" fill="none"/>
+                                    </svg>
+                                    Nanopublication Web Editor
+                                </div>
+                            </a>
+                            <a href="https://sciencelivehub.github.io/zotero-nanopub-plugin/" class="dropdown-item">
+                                <img src="./static/zotero-logo.png" alt="Zotero logo" width="70"> Plugin
+                            </a>
+                        </div>
+                    </div>
+                    <a href="https://sciencelivehub.github.io" class="nav-link">About</a>
+                    <a href="https://sciencelivehub.github.io/science-live-pipeline/" class="nav-link">Documentation</a>
+                    <div class="nav-auth">
+                        <button class="btn-orcid">
+                            <svg class="orcid-icon" viewBox="0 0 256 256">
+                                <path fill="#A6CE39" d="M128,0C57.3,0,0,57.3,0,128s57.3,128,128,128s128-57.3,128-128S198.7,0,128,0z"/>
+                                <path fill="#FFF" d="M86.3,186.2H70.9V79.1h15.4v107.1z"/>
+                                <path fill="#FFF" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
+                                <path fill="#FFF" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z"/>
+                            </svg>
+                            Sign in with ORCID
+                        </button>
+                    </div>
                 </div>
             </div>
+        </nav>
 
-
-
-        <div class="nav-menu">
-            <div class="nav-dropdown">
-                <button class="nav-link dropdown-toggle">
-                    Create
-                    <svg class="dropdown-arrow" viewBox="0 0 20 20" fill="currentColor">
-                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
-                    </svg>
-                </button>
-                <div class="dropdown-content">
-                    <a href="https://nanodash.knowledgepixels.com/publish" class="dropdown-item">
-            <div class="icon-wrapper ">
-<svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
-    <!-- Document/template base -->
-    <rect x="4" y="3" width="16" height="18" rx="2" fill="#be2e78"/>
-    
-    <!-- Template lines -->
-    <rect x="7" y="6" width="10" height="2" rx="1" fill="white"/>
-    <rect x="7" y="10" width="6" height="2" rx="1" fill="white"/>
-    <rect x="7" y="14" width="8" height="2" rx="1" fill="white"/>
-    
-    <!-- Edit/creation indicator - pencil -->
-    <g transform="translate(14, 14)">
-        <rect x="0" y="0" width="8" height="8" rx="1" fill="white"/>
-        <path d="M2 6l4-4 2 2-4 4-2 0 0-2z" fill="#be2e78"/>
-        <path d="M5 3l1-1 2 2-1 1-2-2z" fill="#be2e78"/>
-    </g>
-    
-    <!-- Guide dots showing step progression -->
-    <circle cx="4" cy="6" r="1.5" fill="#4a9eff"/>
-    <circle cx="4" cy="10" r="1.5" fill="#4a9eff"/>
-    <circle cx="4" cy="14" r="1.5" fill="#4a9eff"/>
-    <path d="M4 7.5v1M4 11.5v1" stroke="#4a9eff" stroke-width="1" fill="none"/>
-</svg>
-                    Nanopublication Web Editor
-            </div>
-                    </a>
-                    <a href="https://sciencelivehub.github.io/zotero-nanopub-plugin/" class="dropdown-item"><img src="./static/zotero-logo.png" alt="Zotero logo" width="70" > Plugin</a>
-                </div>
-            </div>
-            <a href="https://sciencelivehub.github.io" class="nav-link">About</a>
-            <a href="https://sciencelivehub.github.io/science-live-pipeline/" class="nav-link">Documentation</a>
-            <div class="nav-auth">
-                <button class="btn-orcid">
-                    <svg class="orcid-icon" viewBox="0 0 256 256">
-                        <path fill="#A6CE39" d="M128,0C57.3,0,0,57.3,0,128s57.3,128,128,128s128-57.3,128-128S198.7,0,128,0z"/>
-                        <path fill="#FFF" d="M86.3,186.2H70.9V79.1h15.4v107.1z"/>
-                        <path fill="#FFF" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
-                        <path fill="#FFF" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z"/>
-                    </svg>
-                    Sign in with ORCID
-                </button>
-            </div>
-        </div>
-    </div>
-</nav>
         <!-- Header -->
         <div class="header">
             <div class="header-content">
@@ -148,5 +132,791 @@
                 
             </div>
         </div>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-header">
+                <h1 class="input-title">🔍 Find Collaborators</h1>
+                <p class="input-subtitle">Describe your research interests to find contributors working on similar topics</p>
+            </div>
+            
+            <div class="search-input-group">
+                <textarea class="search-textarea" placeholder="Enter your research interests... e.g., 'AI explainability in environmental decision-making' or 'Quantum computing for molecular simulations'"></textarea>
+                <button class="analyze-btn" onclick="analyzeInput()">
+                    <i class="fas fa-sparkles"></i> Analyze
+                </button>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <button class="btn btn-secondary" onclick="loadExample('aiexp')">
+                    <i class="fas fa-brain"></i> Try AI Explainability
+                </button>
+                <button class="btn btn-secondary" onclick="loadExample('quantum')">
+                    <i class="fas fa-atom"></i> Try Quantum Computing
+                </button>
+                <button class="btn btn-secondary" onclick="loadExample('climate')">
+                    <i class="fas fa-globe"></i> Try Climate Science
+                </button>
+            </div>
+        </div>
+
+        <!-- Topics Selection -->
+        <div class="topics-section" id="topicsSection">
+            <div class="topics-header">
+                <i class="fas fa-tags"></i>
+                Select research areas to find contributors:
+            </div>
+            <div class="topic-tags" id="topicTags"></div>
+            <button class="btn btn-primary" onclick="generateRadar()">
+                <i class="fas fa-users"></i> Generate Contributor Radar
+            </button>
+        </div>
+
+        <!-- Radar Visualization -->
+        <div class="radar-visualization" id="radarVisualization">
+            <div class="radar-header">
+                <h2 class="radar-title">Contributor Radar</h2>
+                <p class="radar-subtitle">Found <span id="contributorCount">0</span> potential collaborators</p>
+            </div>
+
+            <div class="radar-legend">
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #10b981;"></div>
+                    <span>High Activity (Center)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #3b82f6;"></div>
+                    <span>Active</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #f59e0b;"></div>
+                    <span>Moderate</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #ff6b6b;"></div>
+                    <span>New (Outer ring)</span>
+                </div>
+            </div>
+
+            <div class="radar-svg-container">
+                <svg id="radarChart" width="700" height="700" viewBox="-50 -50 700 700"></svg>
+                <div class="radar-tooltip" id="tooltip"></div>
+            </div>
+        </div>
+
+        <!-- Contributor Profile Modal -->
+        <div class="profile-modal" id="profileModal">
+            <div class="profile-container">
+                <div class="profile-header">
+                    <button class="close-btn" onclick="closeProfile()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div class="profile-info">
+                        <div class="profile-avatar" id="profileAvatar">AF</div>
+                        <div class="profile-details">
+                            <h2 id="profileName">Anne Fouilloux</h2>
+                            <div class="profile-meta">
+                                <div class="profile-meta-item">
+                                    <i class="fab fa-orcid"></i>
+                                    <span id="profileOrcid">0000-0002-1784-2920</span>
+                                </div>
+                                <div class="profile-meta-item">
+                                    <i class="fas fa-building"></i>
+                                    <span id="profileOrg">University of Oslo</span>
+                                </div>
+                                <div class="profile-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span id="profileLocation">Oslo, Norway</span>
+                                </div>
+                            </div>
+                            <div class="profile-bio" id="profileBio">
+                                Research Software Engineer specializing in Earth System modeling, cloud computing, and FAIR research practices. 
+                                Passionate about open science and reproducible research workflows.
+                            </div>
+                            <div class="profile-badges" id="profileBadges">
+                                <div class="badge"><i class="fas fa-trophy"></i> Top Contributor 2024</div>
+                                <div class="badge"><i class="fas fa-star"></i> Open Science Advocate</div>
+                                <div class="badge"><i class="fas fa-code"></i> Code Maestro</div>
+                                <div class="badge"><i class="fas fa-database"></i> Data Champion</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-content">
+                    <!-- Stats Section -->
+                    <div class="profile-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-chart-line"></i> Contribution Stats
+                        </h3>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-value" id="statTotal">247</div>
+                                <div class="stat-label">Total Nanopublications</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="statClaims">132</div>
+                                <div class="stat-label">Research Claims</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="statData">78</div>
+                                <div class="stat-label">Data Publications</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value" id="statCode">37</div>
+                                <div class="stat-label">Software Tools</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contribution Heatmap -->
+                    <div class="profile-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-fire"></i> Contribution Activity
+                        </h3>
+                        <div class="heatmap-container">
+                            <div id="contributionHeatmap" class="heatmap"></div>
+                        </div>
+                    </div>
+
+                    <!-- Pinned Nanopublications -->
+                    <div class="profile-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-thumbtack"></i> Pinned Nanopublications
+                        </h3>
+                        <div class="nanopub-grid" id="pinnedNanopubs"></div>
+                    </div>
+
+                    <!-- Activity Overview -->
+                    <div class="profile-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-chart-pie"></i> Activity Overview
+                        </h3>
+                        <div class="activity-chart" id="activityChart">
+                            <canvas id="contributionChart" width="400" height="300"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Recent Projects -->
+                    <div class="profile-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-folder-open"></i> Research Projects
+                        </h3>
+                        <div class="nanopub-grid" id="recentProjects"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // State management
+        let selectedTopics = [];
+        let contributorData = [];
+        let currentProfile = null;
+
+        // Example inputs
+        const examples = {
+            aiexp: "AI explainability frameworks for environmental decision-making and climate modeling",
+            quantum: "Quantum computing libraries and frameworks for molecular simulations and drug discovery",
+            climate: "Climate data standards, Earth observation systems, and environmental monitoring"
+        };
+
+        // Mock contributor database
+        const mockContributors = {
+            'aiexp': [
+                {
+                    id: 'contrib-1',
+                    name: 'Dr. Sarah Chen',
+                    initials: 'SC',
+                    orcid: '0000-0003-1234-5678',
+                    organization: 'MIT AI Lab',
+                    location: 'Cambridge, USA',
+                    bio: 'Leading researcher in explainable AI for climate science. Working on making complex climate models interpretable for policy makers.',
+                    badges: ['XAI Pioneer', 'Climate Tech Leader', 'Open Science'],
+                    stats: { total: 189, claims: 98, data: 56, code: 35 },
+                    expertise: ['SHAP', 'LIME', 'Climate Models', 'XAI'],
+                    activityLevel: 'high'
+                },
+                {
+                    id: 'contrib-2',
+                    name: 'Prof. Michael Rodriguez',
+                    initials: 'MR',
+                    orcid: '0000-0002-8765-4321',
+                    organization: 'Stanford Earth Sciences',
+                    location: 'Stanford, USA',
+                    bio: 'Interdisciplinary researcher combining machine learning with environmental science for better decision support systems.',
+                    badges: ['Top Contributor 2024', 'Data Champion'],
+                    stats: { total: 156, claims: 87, data: 45, code: 24 },
+                    expertise: ['Environmental ML', 'Decision Systems', 'Policy'],
+                    activityLevel: 'active'
+                },
+                {
+                    id: 'contrib-3',
+                    name: 'Dr. Elena Petrova',
+                    initials: 'EP',
+                    orcid: '0000-0001-9876-5432',
+                    organization: 'Max Planck Institute',
+                    location: 'Munich, Germany',
+                    bio: 'Developing interpretable deep learning models for biodiversity monitoring and ecosystem analysis.',
+                    badges: ['Rising Star', 'Biodiversity Expert'],
+                    stats: { total: 78, claims: 42, data: 28, code: 8 },
+                    expertise: ['Deep Learning', 'Biodiversity', 'Ecosystem Modeling'],
+                    activityLevel: 'moderate'
+                }
+            ],
+            'quantum': [
+                {
+                    id: 'contrib-4',
+                    name: 'Dr. Alex Wong',
+                    initials: 'AW',
+                    orcid: '0000-0002-5555-6666',
+                    organization: 'IBM Quantum',
+                    location: 'Yorktown Heights, USA',
+                    bio: 'Quantum algorithm developer focusing on variational quantum eigensolvers for molecular simulations.',
+                    badges: ['Quantum Pioneer', 'Code Maestro', 'Top Contributor'],
+                    stats: { total: 234, claims: 112, data: 67, code: 55 },
+                    expertise: ['Qiskit', 'VQE', 'QAOA', 'Molecular Simulation'],
+                    activityLevel: 'high'
+                },
+                {
+                    id: 'contrib-5',
+                    name: 'Prof. Yuki Tanaka',
+                    initials: 'YT',
+                    orcid: '0000-0003-7777-8888',
+                    organization: 'University of Tokyo',
+                    location: 'Tokyo, Japan',
+                    bio: 'Research on quantum machine learning applications in drug discovery and materials science.',
+                    badges: ['ML Quantum Bridge', 'Innovation Award'],
+                    stats: { total: 167, claims: 89, data: 52, code: 26 },
+                    expertise: ['PennyLane', 'QML', 'Drug Discovery'],
+                    activityLevel: 'active'
+                }
+            ],
+            'climate': [
+                {
+                    id: 'contrib-6',
+                    name: 'Dr. Anne Fouilloux',
+                    initials: 'AF',
+                    orcid: '0000-0002-1784-2920',
+                    organization: 'University of Oslo',
+                    location: 'Oslo, Norway',
+                    bio: 'Research Software Engineer specializing in Earth System modeling, cloud computing, and FAIR research practices.',
+                    badges: ['Top Contributor 2024', 'Open Science Advocate', 'Code Maestro', 'Data Champion'],
+                    stats: { total: 247, claims: 132, data: 78, code: 37 },
+                    expertise: ['Zarr', 'Earth Observation', 'Cloud Computing', 'FAIR Data'],
+                    activityLevel: 'high'
+                },
+                {
+                    id: 'contrib-7',
+                    name: 'Dr. Maria Santos',
+                    initials: 'MS',
+                    orcid: '0000-0001-3333-4444',
+                    organization: 'ESA',
+                    location: 'Frascati, Italy',
+                    bio: 'Leading efforts in standardizing Earth observation data formats for operational satellite systems.',
+                    badges: ['Standards Pioneer', 'EO Expert'],
+                    stats: { total: 198, claims: 95, data: 72, code: 31 },
+                    expertise: ['EOPF', 'Satellite Data', 'Standards'],
+                    activityLevel: 'active'
+                }
+            ]
+        };
+
+        function loadExample(type) {
+            document.querySelector('.search-textarea').value = examples[type];
+        }
+
+        function analyzeInput() {
+            const input = document.querySelector('.search-textarea').value;
+            if (!input.trim()) return;
+
+            document.querySelector('.analyze-btn').innerHTML = '<span class="loading"></span> Analyzing...';
+
+            setTimeout(() => {
+                let mockTopics = [];
+                const inputLower = input.toLowerCase();
+
+                if (inputLower.includes('ai') || inputLower.includes('explainability')) {
+                    mockTopics = [
+                        "AI Explainability Frameworks",
+                        "Climate Model Interpretability",
+                        "Environmental Decision Support",
+                        "XAI for Policy Making",
+                        "Biodiversity Monitoring ML",
+                        "Transparent AI Systems"
+                    ];
+                } else if (inputLower.includes('quantum')) {
+                    mockTopics = [
+                        "Quantum Algorithm Development",
+                        "Molecular Simulation Tools",
+                        "Quantum Machine Learning",
+                        "Drug Discovery Applications",
+                        "Quantum Error Mitigation",
+                        "Hybrid Classical-Quantum Systems"
+                    ];
+                } else if (inputLower.includes('climate') || inputLower.includes('earth')) {
+                    mockTopics = [
+                        "Earth Observation Systems",
+                        "Climate Data Standards",
+                        "Satellite Data Processing",
+                        "Environmental Monitoring",
+                        "FAIR Data Practices",
+                        "Cloud-Optimized Formats"
+                    ];
+                } else {
+                    mockTopics = [
+                        "Open Science Practices",
+                        "Research Reproducibility",
+                        "Data Management",
+                        "Collaborative Research",
+                        "Scientific Software",
+                        "Research Methods"
+                    ];
+                }
+
+                displayTopics(mockTopics);
+                document.querySelector('.analyze-btn').innerHTML = '<i class="fas fa-sparkles"></i> Analyze';
+            }, 1500);
+        }
+
+        function displayTopics(topics) {
+            const topicsSection = document.getElementById('topicsSection');
+            const topicTags = document.getElementById('topicTags');
+            
+            topicTags.innerHTML = topics.map(topic => `
+                <div class="topic-tag" onclick="toggleTopic('${topic}')">
+                    ${topic}
+                </div>
+            `).join('');
+
+            topicsSection.style.display = 'block';
+            topicsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleTopic(topic) {
+            const tag = event.target;
+            tag.classList.toggle('selected');
+            
+            if (selectedTopics.includes(topic)) {
+                selectedTopics = selectedTopics.filter(t => t !== topic);
+            } else {
+                selectedTopics.push(topic);
+            }
+        }
+
+        function generateRadar() {
+            if (selectedTopics.length === 0) {
+                alert('Please select at least one topic');
+                return;
+            }
+
+            document.querySelector('#topicsSection .btn-primary').innerHTML = '<span class="loading"></span> Finding contributors...';
+
+            setTimeout(() => {
+                generateContributorData();
+                drawRadar();
+                
+                document.getElementById('radarVisualization').style.display = 'block';
+                document.getElementById('radarVisualization').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('contributorCount').textContent = contributorData.length;
+                
+                document.querySelector('#topicsSection .btn-primary').innerHTML = '<i class="fas fa-users"></i> Generate Contributor Radar';
+            }, 2000);
+        }
+
+        function generateContributorData() {
+            contributorData = [];
+            
+            // Determine which contributor set to use based on selected topics
+            const topicsStr = selectedTopics.join(' ').toLowerCase();
+            let contributorSet = [];
+            
+            if (topicsStr.includes('ai') || topicsStr.includes('explainability')) {
+                contributorSet = mockContributors.aiexp;
+            } else if (topicsStr.includes('quantum')) {
+                contributorSet = mockContributors.quantum;
+            } else if (topicsStr.includes('climate') || topicsStr.includes('earth')) {
+                contributorSet = mockContributors.climate;
+            }
+            
+            // Add some random contributors too
+            const allContributors = [...contributorSet];
+            
+            // Generate additional mock contributors
+            for (let i = 0; i < 8; i++) {
+                const activityLevels = ['high', 'active', 'moderate', 'new'];
+                const sectors = ['Research', 'Development', 'Application', 'Theory'];
+                
+                allContributors.push({
+                    id: `contrib-gen-${i}`,
+                    name: `Dr. ${['James', 'Emma', 'Carlos', 'Priya', 'Lars', 'Sofia', 'Ahmed', 'Liu'][i]} ${['Smith', 'Johnson', 'Garcia', 'Patel', 'Nielsen', 'Popov', 'Hassan', 'Zhang'][i]}`,
+                    initials: `${['J', 'E', 'C', 'P', 'L', 'S', 'A', 'L'][i]}${['S', 'J', 'G', 'P', 'N', 'P', 'H', 'Z'][i]}`,
+                    orcid: `0000-000${i}-${1000 + i * 1111}-${2000 + i * 1234}`,
+                    organization: ['Oxford University', 'CERN', 'NASA', 'CNRS', 'CSIRO', 'ETH Zurich', 'Caltech', 'NUS'][i],
+                    location: ['Oxford, UK', 'Geneva, Switzerland', 'Houston, USA', 'Paris, France', 'Sydney, Australia', 'Zurich, Switzerland', 'Pasadena, USA', 'Singapore'][i],
+                    bio: 'Contributing to open science through innovative research and collaborative projects.',
+                    badges: i < 3 ? ['Active Contributor'] : [],
+                    stats: {
+                        total: Math.floor(Math.random() * 150) + 20,
+                        claims: Math.floor(Math.random() * 80) + 10,
+                        data: Math.floor(Math.random() * 50) + 5,
+                        code: Math.floor(Math.random() * 30) + 2
+                    },
+                    expertise: selectedTopics.slice(0, 3),
+                    activityLevel: activityLevels[Math.floor(Math.random() * 4)],
+                    sector: sectors[i % 4],
+                    angle: (i / 8) * 360 + Math.random() * 45
+                });
+            }
+            
+            contributorData = allContributors;
+        }
+
+        function drawRadar() {
+            const svg = document.getElementById('radarChart');
+            const centerX = 300;
+            const centerY = 300;
+            const maxRadius = 250;
+            
+            svg.innerHTML = '';
+            
+            // Draw concentric circles
+            const rings = 4;
+            const ringColors = ['#d1fae5', '#dbeafe', '#fed7aa', '#fee2e2'];
+            const ringLabels = ['High Activity', 'Active', 'Moderate', 'New Contributors'];
+            
+            for (let i = rings - 1; i >= 0; i--) {
+                const radius = (maxRadius / rings) * (i + 1);
+                
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', centerX);
+                circle.setAttribute('cy', centerY);
+                circle.setAttribute('r', radius);
+                circle.setAttribute('fill', ringColors[i]);
+                circle.setAttribute('fill-opacity', '0.3');
+                circle.setAttribute('stroke', '#e5e7eb');
+                circle.setAttribute('stroke-width', '2');
+                svg.appendChild(circle);
+            }
+            
+            // Add ring labels
+            for (let i = 0; i < rings; i++) {
+                const radius = (maxRadius / rings) * (i + 1);
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', centerX);
+                label.setAttribute('y', centerY - radius + 15);
+                label.setAttribute('text-anchor', 'middle');
+                label.setAttribute('fill', '#6b7280');
+                label.setAttribute('font-size', '12');
+                label.textContent = ringLabels[i];
+                svg.appendChild(label);
+            }
+            
+            // Draw sector lines
+            const sectors = ['Research', 'Development', 'Application', 'Theory'];
+            sectors.forEach((sector, i) => {
+                const angle = (i / sectors.length) * 2 * Math.PI - Math.PI / 2;
+                const x2 = centerX + maxRadius * Math.cos(angle);
+                const y2 = centerY + maxRadius * Math.sin(angle);
+                
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', centerX);
+                line.setAttribute('y1', centerY);
+                line.setAttribute('x2', x2);
+                line.setAttribute('y2', y2);
+                line.setAttribute('stroke', '#e5e7eb');
+                line.setAttribute('stroke-width', '1');
+                line.setAttribute('stroke-dasharray', '5,5');
+                svg.appendChild(line);
+                
+                const labelX = centerX + (maxRadius + 30) * Math.cos(angle);
+                const labelY = centerY + (maxRadius + 30) * Math.sin(angle);
+                
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', labelX);
+                text.setAttribute('y', labelY);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('fill', '#374151');
+                text.setAttribute('font-weight', '600');
+                text.setAttribute('font-size', '14');
+                text.textContent = sector;
+                svg.appendChild(text);
+            });
+            
+            // Plot contributors
+            const activityColors = {
+                'high': '#10b981',
+                'active': '#3b82f6',
+                'moderate': '#f59e0b',
+                'new': '#ff6b6b'
+            };
+            
+            const activityRings = {
+                'high': 1,
+                'active': 2,
+                'moderate': 3,
+                'new': 4
+            };
+            
+            contributorData.forEach((contributor, i) => {
+                const angleRad = ((contributor.angle || (i / contributorData.length) * 360) * Math.PI) / 180 - Math.PI / 2;
+                const ringRadius = (maxRadius / rings) * activityRings[contributor.activityLevel];
+                
+                const offset = (Math.random() - 0.5) * 30;
+                const x = centerX + (ringRadius + offset) * Math.cos(angleRad);
+                const y = centerY + (ringRadius + offset) * Math.sin(angleRad);
+                
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                g.setAttribute('class', 'contributor-item');
+                g.style.cursor = 'pointer';
+                
+                // Outer circle
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', y);
+                circle.setAttribute('r', '16');
+                circle.setAttribute('fill', activityColors[contributor.activityLevel]);
+                circle.setAttribute('stroke', 'white');
+                circle.setAttribute('stroke-width', '3');
+                g.appendChild(circle);
+                
+                // Initials
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', x);
+                text.setAttribute('y', y + 5);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('fill', 'white');
+                text.setAttribute('font-size', '10');
+                text.setAttribute('font-weight', '600');
+                text.textContent = contributor.initials;
+                g.appendChild(text);
+                
+                g.addEventListener('mouseenter', (e) => showTooltip(e, contributor));
+                g.addEventListener('mouseleave', hideTooltip);
+                g.addEventListener('click', () => showProfile(contributor));
+                
+                svg.appendChild(g);
+            });
+        }
+
+        function showTooltip(event, contributor) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = `
+                <div class="tooltip-title">${contributor.name}</div>
+                <div class="tooltip-details">
+                    <div>${contributor.organization}</div>
+                    <div>Activity: ${contributor.activityLevel}</div>
+                    <div>Publications: ${contributor.stats.total}</div>
+                    <div style="margin-top: 0.5rem; font-style: italic;">Click to view profile</div>
+                </div>
+            `;
+            
+            tooltip.style.left = event.pageX + 10 + 'px';
+            tooltip.style.top = event.pageY - 10 + 'px';
+            tooltip.classList.add('show');
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').classList.remove('show');
+        }
+
+        function showProfile(contributor) {
+            currentProfile = contributor;
+            
+            // Update profile header
+            document.getElementById('profileAvatar').textContent = contributor.initials;
+            document.getElementById('profileName').textContent = contributor.name;
+            document.getElementById('profileOrcid').textContent = contributor.orcid;
+            document.getElementById('profileOrg').textContent = contributor.organization;
+            document.getElementById('profileLocation').textContent = contributor.location;
+            document.getElementById('profileBio').textContent = contributor.bio;
+            
+            // Update badges
+            const badgesHtml = contributor.badges.map(badge => 
+                `<div class="badge"><i class="fas fa-${badge.includes('Top') ? 'trophy' : badge.includes('Star') ? 'star' : badge.includes('Code') ? 'code' : badge.includes('Data') ? 'database' : 'award'}"></i> ${badge}</div>`
+            ).join('');
+            document.getElementById('profileBadges').innerHTML = badgesHtml;
+            
+            // Update stats
+            document.getElementById('statTotal').textContent = contributor.stats.total;
+            document.getElementById('statClaims').textContent = contributor.stats.claims;
+            document.getElementById('statData').textContent = contributor.stats.data;
+            document.getElementById('statCode').textContent = contributor.stats.code;
+            
+            // Generate heatmap
+            generateHeatmap();
+            
+            // Generate pinned nanopublications
+            generatePinnedNanopubs();
+            
+            // Generate activity chart
+            generateActivityChart();
+            
+            // Generate projects
+            generateProjects();
+            
+            // Show modal
+            document.getElementById('profileModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProfile() {
+            document.getElementById('profileModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function generateHeatmap() {
+            const heatmap = document.getElementById('contributionHeatmap');
+            const weeks = 52;
+            const days = 7;
+            const today = new Date();
+            
+            let html = '<div style="padding-left: 30px; display: grid; grid-template-columns: repeat(53, 14px); gap: 2px;">';
+            
+            // Month labels
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            let currentMonth = today.getMonth();
+            for (let w = 0; w < weeks; w += 4) {
+                html += `<div style="grid-column: ${w + 1}; font-size: 10px; color: #6b7280;">${months[currentMonth]}</div>`;
+                currentMonth = (currentMonth - 1 + 12) % 12;
+            }
+            html += '</div>';
+            
+            // Day labels and cells
+            const dayLabels = ['', 'Mon', '', 'Wed', '', 'Fri', ''];
+            for (let d = 0; d < days; d++) {
+                html += `<div style="display: flex; gap: 2px; align-items: center;">`;
+                html += `<div style="width: 25px; font-size: 10px; color: #6b7280;">${dayLabels[d]}</div>`;
+                
+                for (let w = 0; w < weeks; w++) {
+                    const contributions = Math.random() < 0.7 ? Math.floor(Math.random() * 5) : 0;
+                    let className = '';
+                    if (contributions === 0) className = '';
+                    else if (contributions === 1) className = 'low';
+                    else if (contributions <= 3) className = 'medium';
+                    else if (contributions <= 5) className = 'high';
+                    else className = 'very-high';
+                    
+                    const date = new Date(today);
+                    date.setDate(date.getDate() - (weeks - w) * 7 - d);
+                    
+                    html += `<div class="heatmap-cell ${className}" title="${date.toDateString()}: ${contributions} contributions"></div>`;
+                }
+                html += '</div>';
+            }
+            
+            heatmap.innerHTML = html;
+        }
+
+        function generatePinnedNanopubs() {
+            const pinned = document.getElementById('pinnedNanopubs');
+            
+            const nanopubs = [
+                {
+                    title: 'Framework for Interpretable Climate Model Outputs',
+                    type: 'Claim',
+                    endorsements: 45,
+                    citations: 23
+                },
+                {
+                    title: 'Global Temperature Anomaly Dataset 2020-2024',
+                    type: 'Data',
+                    endorsements: 67,
+                    citations: 89
+                },
+                {
+                    title: 'XAI Toolkit for Environmental Scientists',
+                    type: 'Code',
+                    endorsements: 112,
+                    citations: 45
+                }
+            ];
+            
+            pinned.innerHTML = nanopubs.map(pub => `
+                <div class="nanopub-card">
+                    <div class="nanopub-title">${pub.title}</div>
+                    <div style="color: #6b7280; font-size: 0.9rem; margin: 0.5rem 0;">Type: ${pub.type}</div>
+                    <div class="nanopub-meta">
+                        <span><i class="fas fa-thumbs-up"></i> ${pub.endorsements}</span>
+                        <span><i class="fas fa-quote-right"></i> ${pub.citations}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function generateActivityChart() {
+            const ctx = document.getElementById('contributionChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Claims', 'Data', 'Code', 'Applications'],
+                    datasets: [{
+                        data: [
+                            currentProfile.stats.claims,
+                            currentProfile.stats.data,
+                            currentProfile.stats.code,
+                            Math.floor(currentProfile.stats.total * 0.1)
+                        ],
+                        backgroundColor: [
+                            '#3b82f6',
+                            '#10b981',
+                            '#f59e0b',
+                            '#ff6b6b'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                }
+            });
+        }
+
+        function generateProjects() {
+            const projects = document.getElementById('recentProjects');
+            
+            const projectList = [
+                {
+                    title: 'Climate Model Interpretability Initiative',
+                    description: 'Developing standardized approaches for explaining complex climate models',
+                    contributors: 12,
+                    nanopubs: 34
+                },
+                {
+                    title: 'FAIR Earth Observation Data Standards',
+                    description: 'Creating interoperable formats for satellite data processing',
+                    contributors: 8,
+                    nanopubs: 28
+                }
+            ];
+            
+            projects.innerHTML = projectList.map(proj => `
+                <div class="nanopub-card">
+                    <div class="nanopub-title">${proj.title}</div>
+                    <div style="color: #6b7280; font-size: 0.9rem; margin: 0.5rem 0;">${proj.description}</div>
+                    <div class="nanopub-meta">
+                        <span><i class="fas fa-users"></i> ${proj.contributors} contributors</span>
+                        <span><i class="fas fa-file-alt"></i> ${proj.nanopubs} nanopubs</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('profileModal');
+            if (event.target === modal) {
+                closeProfile();
+            }
+        }
+    </script>
 </body>
 </html>
