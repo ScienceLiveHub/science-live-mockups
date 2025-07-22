@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Live - Transform Research into Content</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./static/styles.css">
+    <link rel="stylesheet" href="./static/research-radar.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation bar -->
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="https://sciencelivehub.github.io" class="brand-link">
+                <img src="./static/network-logo.png" alt="Science Live Logo" class="nav-logo">
+            </a>
+    <div class="brand-name">
+        <span class="brand-text">Science</span> <span class="brand-live">Live</span>
+    </div>
+
+        </div>
+
+        <div class="nav-menu">
+            <div class="nav-dropdown">
+                <button class="nav-link dropdown-toggle">
+                    Explore
+                    <svg class="dropdown-arrow" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://sciencelivehub.github.io/science-live-mockups/" class="dropdown-item">
+            <div class="icon-wrapper ">
+                <svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
+                    <!-- Three connected nodes -->
+                    <circle cx="12" cy="8" r="3"/>
+                    <circle cx="7" cy="16" r="3"/>
+                    <circle cx="17" cy="16" r="3"/>
+                    <!-- Connections -->
+                    <path d="M12 11v2M12 13l-3.5 2M12 13l3.5 2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <!-- AI dots -->
+                    <circle cx="12" cy="8" r="1" fill="white"/>
+                    <circle cx="7" cy="16" r="1" fill="white"/>
+                    <circle cx="17" cy="16" r="1" fill="white"/>
+                </svg>
+                   Content Generator (AI-powered) 
+            </div>
+                    </a>
+                    <a href="research-radar.html" class="dropdown-item">
+            <div class="icon-wrapper ">
+<svg viewBox="0 0 24 24" fill="#051d40" style="width: 25px; height: 25px;">
+  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+  <circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+  <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+</svg>
+
+                    Research Radar
+            </div>
+                    </a>
+                    <a href="contributor-radar.html" class="dropdown-item">
+            <div class="icon-wrapper ">
+<svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
+  <!-- Central user -->
+  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+  <path d="M8 20c0-2 8-2 8 0v2H8v-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+  <!-- Left user -->
+  <circle cx="6" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M4 17c0-1 4-1 4 0v1H4v-1z" fill="none" stroke="currentColor" stroke-width="2"/>
+  <!-- Right user -->
+  <circle cx="18" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/>
+  <path d="M16 17c0-1 4-1 4 0v1h-4v-1z" fill="none" stroke="currentColor" stroke-width="2"/>
+</svg>
+
+                    Contributor Radar
+            </div>
+</a>
+                </div>
+            </div>
+
+
+
+        <div class="nav-menu">
+            <div class="nav-dropdown">
+                <button class="nav-link dropdown-toggle">
+                    Create
+                    <svg class="dropdown-arrow" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                    </svg>
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://nanodash.knowledgepixels.com/publish" class="dropdown-item">
+            <div class="icon-wrapper ">
+<svg viewBox="0 0 24 24" fill="#be2e78" style="width: 25px; height: 25px;">
+    <!-- Document/template base -->
+    <rect x="4" y="3" width="16" height="18" rx="2" fill="#be2e78"/>
+    
+    <!-- Template lines -->
+    <rect x="7" y="6" width="10" height="2" rx="1" fill="white"/>
+    <rect x="7" y="10" width="6" height="2" rx="1" fill="white"/>
+    <rect x="7" y="14" width="8" height="2" rx="1" fill="white"/>
+    
+    <!-- Edit/creation indicator - pencil -->
+    <g transform="translate(14, 14)">
+        <rect x="0" y="0" width="8" height="8" rx="1" fill="white"/>
+        <path d="M2 6l4-4 2 2-4 4-2 0 0-2z" fill="#be2e78"/>
+        <path d="M5 3l1-1 2 2-1 1-2-2z" fill="#be2e78"/>
+    </g>
+    
+    <!-- Guide dots showing step progression -->
+    <circle cx="4" cy="6" r="1.5" fill="#4a9eff"/>
+    <circle cx="4" cy="10" r="1.5" fill="#4a9eff"/>
+    <circle cx="4" cy="14" r="1.5" fill="#4a9eff"/>
+    <path d="M4 7.5v1M4 11.5v1" stroke="#4a9eff" stroke-width="1" fill="none"/>
+</svg>
+                    Nanopublication Web Editor
+            </div>
+                    </a>
+                    <a href="https://sciencelivehub.github.io/zotero-nanopub-plugin/" class="dropdown-item"><img src="./static/zotero-logo.png" alt="Zotero logo" width="70" > Plugin</a>
+                </div>
+            </div>
+            <a href="https://sciencelivehub.github.io" class="nav-link">About</a>
+            <a href="https://sciencelivehub.github.io/science-live-pipeline/" class="nav-link">Documentation</a>
+            <div class="nav-auth">
+                <button class="btn-orcid">
+                    <svg class="orcid-icon" viewBox="0 0 256 256">
+                        <path fill="#A6CE39" d="M128,0C57.3,0,0,57.3,0,128s57.3,128,128,128s128-57.3,128-128S198.7,0,128,0z"/>
+                        <path fill="#FFF" d="M86.3,186.2H70.9V79.1h15.4v107.1z"/>
+                        <path fill="#FFF" d="M108.9,79.1h41.6c39.6,0,57,28.3,57,53.6c0,27.5-21.5,53.6-56.8,53.6h-41.8V79.1z M124.3,172.4h24.5c34.9,0,42.9-26.5,42.9-39.7c0-21.5-13.7-39.7-43.7-39.7h-23.7V172.4z"/>
+                        <path fill="#FFF" d="M88.7,56.8c0,5.5-4.5,10.1-10.1,10.1c-5.6,0-10.1-4.6-10.1-10.1c0-5.6,4.5-10.1,10.1-10.1C84.2,46.7,88.7,51.3,88.7,56.8z"/>
+                    </svg>
+                    Sign in with ORCID
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="badge">Research Radar</div>
+                <h1 class="title">Science Live <span class="title-highlight">Research Highlights</span></h1>
+                <p class="subtitle">Visualize the latest trends in Research</p>
+                
+            </div>
+        </div>
+
+        <!-- Body -->
+    <div class="radar-container">
+        <!-- Input Section -->
+        <div class="input-section">
+            <div class="input-header">
+                <h1 class="input-title">🎯 Create Your Research Radar</h1>
+                <p class="input-subtitle">Describe your research interests and we'll help you monitor their maturity</p>
+            </div>
+            
+            <div class="search-input-group">
+                <textarea class="search-textarea" placeholder="Enter your research interests... e.g., 'CRISPR gene editing applications in cancer treatment' or 'sustainable energy storage using graphene'"></textarea>
+                <button class="analyze-btn" onclick="analyzeInput()">
+                    <i class="fas fa-sparkles"></i> Analyze
+                </button>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                <button class="btn btn-secondary" onclick="loadExample('crispr')">
+                    <i class="fas fa-dna"></i> Try CRISPR Example
+                </button>
+                <button class="btn btn-secondary" onclick="loadExample('quantum')">
+                    <i class="fas fa-atom"></i> Try Quantum Computing
+                </button>
+                <button class="btn btn-secondary" onclick="loadExample('climate')">
+                    <i class="fas fa-leaf"></i> Try Climate Tech
+                </button>
+            </div>
+        </div>
+
+        <!-- Topics Selection -->
+        <div class="topics-section" id="topicsSection">
+            <div class="topics-header">
+                <i class="fas fa-tags"></i>
+                Select topics to monitor:
+            </div>
+            <div class="topic-tags" id="topicTags"></div>
+            <button class="btn btn-primary" onclick="generateRadar()">
+                <i class="fas fa-radar"></i> Generate Research Radar
+            </button>
+        </div>
+
+        <!-- Radar Visualization -->
+        <div class="radar-visualization" id="radarVisualization">
+            <div class="radar-header">
+                <h2 class="radar-title">Your Research Radar</h2>
+                <p class="radar-subtitle">Monitoring <span id="topicCount">0</span> research areas</p>
+            </div>
+
+            <div class="radar-legend">
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #10b981;"></div>
+                    <span>Ready to Use (Center)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #3b82f6;"></div>
+                    <span>Evaluate</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #f59e0b;"></div>
+                    <span>Monitor</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot" style="background: #ff6b6b;"></div>
+                    <span>Open Questions (Outer ring)</span>
+                </div>
+            </div>
+
+            <div class="radar-svg-container">
+                <svg id="radarChart" width="700" height="700" viewBox="-50 -50 700 700"></svg>
+                <div class="radar-tooltip" id="tooltip"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="exportRadar()">
+                    <i class="fas fa-download"></i> Export Radar
+                </button>
+                <button class="btn btn-secondary" onclick="shareRadar()">
+                    <i class="fas fa-share-alt"></i> Share Radar
+                </button>
+            </div>
+
+            <div class="results-list" id="resultsList"></div>
+        </div>
+
+        <!-- Premium Features Section -->
+        <div class="premium-section" id="premiumSection">
+            <div class="premium-badge">
+                <i class="fas fa-crown"></i> Premium Feature
+            </div>
+            <div class="premium-content">
+                <div class="premium-icon">🔔</div>
+                <h3 class="premium-title">Set Up Research Monitoring Alerts</h3>
+                <p class="premium-description">
+                    Get notified when research topics reach your desired maturity level
+                </p>
+                <div class="premium-features">
+                    <div class="premium-feature">
+                        <i class="fas fa-check premium-feature-icon"></i>
+                        <div>
+                            <strong>Custom Maturity Thresholds</strong>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Set alerts for when research becomes ready to use, needs evaluation, or requires monitoring</div>
+                        </div>
+                    </div>
+                    <div class="premium-feature">
+                        <i class="fas fa-check premium-feature-icon"></i>
+                        <div>
+                            <strong>Multi-Channel Notifications</strong>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Receive alerts via email, dashboard notifications, and weekly digest reports</div>
+                        </div>
+                    </div>
+                    <div class="premium-feature">
+                        <i class="fas fa-check premium-feature-icon"></i>
+                        <div>
+                            <strong>Advanced Filtering</strong>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Filter by endorsements, reproductions, data availability, and more</div>
+                        </div>
+                    </div>
+                    <div class="premium-feature">
+                        <i class="fas fa-check premium-feature-icon"></i>
+                        <div>
+                            <strong>Priority Support</strong>
+                            <div style="font-size: 0.875rem; color: var(--gray-600);">Get dedicated support for your research monitoring needs</div>
+                        </div>
+                    </div>
+                </div>
+                <button class="upgrade-btn" onclick="showUpgradeModal()">
+                    Upgrade to Premium
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mock data and state
+        let selectedTopics = [];
+        let radarData = [];
+
+        // Example inputs
+        const examples = {
+            crispr: "CRISPR gene editing applications in cancer treatment, including CAR-T cell therapy enhancements and targeted tumor suppression",
+            quantum: "Quantum computing applications in drug discovery and molecular simulation for pharmaceutical development",
+            climate: "Carbon capture technologies using novel materials like MOFs and direct air capture systems"
+        };
+
+        function loadExample(type) {
+            document.querySelector('.search-textarea').value = examples[type];
+        }
+
+        // Analyze input and extract topics
+        function analyzeInput() {
+            const input = document.querySelector('.search-textarea').value;
+            if (!input.trim()) return;
+
+            // Show loading
+            document.querySelector('.analyze-btn').innerHTML = '<span class="loading"></span> Analyzing...';
+
+            setTimeout(() => {
+                // Mock LLM analysis results
+                const mockTopics = [
+                    "CRISPR-Cas9 cancer therapy",
+                    "CAR-T cell enhancement",
+                    "Tumor suppressor gene editing",
+                    "Off-target CRISPR effects",
+                    "Base editing techniques",
+                    "Prime editing applications",
+                    "CRISPR delivery systems",
+                    "Clinical trial outcomes"
+                ];
+
+                displayTopics(mockTopics);
+                document.querySelector('.analyze-btn').innerHTML = '<i class="fas fa-sparkles"></i> Analyze';
+            }, 1500);
+        }
+
+        function displayTopics(topics) {
+            const topicsSection = document.getElementById('topicsSection');
+            const topicTags = document.getElementById('topicTags');
+            
+            topicTags.innerHTML = topics.map(topic => `
+                <div class="topic-tag" onclick="toggleTopic('${topic}')">
+                    ${topic}
+                </div>
+            `).join('');
+
+            topicsSection.style.display = 'block';
+            topicsSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleTopic(topic) {
+            const tag = event.target;
+            tag.classList.toggle('selected');
+            
+            if (selectedTopics.includes(topic)) {
+                selectedTopics = selectedTopics.filter(t => t !== topic);
+            } else {
+                selectedTopics.push(topic);
+            }
+        }
+
+        function generateRadar() {
+            if (selectedTopics.length === 0) {
+                alert('Please select at least one topic to monitor');
+                return;
+            }
+
+            // Show loading state
+            document.querySelector('#topicsSection .btn-primary').innerHTML = '<span class="loading"></span> Searching nanopublications...';
+
+            setTimeout(() => {
+                // Generate mock radar data
+                generateMockRadarData();
+                drawRadar();
+                displayResults();
+                
+                document.getElementById('radarVisualization').style.display = 'block';
+                document.getElementById('radarVisualization').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('topicCount').textContent = selectedTopics.length;
+                
+                // Show premium section after radar
+                document.getElementById('premiumSection').style.display = 'block';
+                
+                // Reset button
+                document.querySelector('#topicsSection .btn-primary').innerHTML = '<i class="fas fa-radar"></i> Generate Research Radar';
+            }, 2000);
+        }
+
+        function generateMockRadarData() {
+            const maturityLevels = ['ready', 'evaluate', 'monitor', 'rethink'];
+            const sectors = ['Concepts', 'Methods', 'Tools', 'Applications'];
+            
+            // Map topics to appropriate sectors based on their nature
+            radarData = selectedTopics.map((topic, i) => {
+                let sector = sectors[i % sectors.length];
+                
+                // Intelligent sector assignment based on topic keywords
+                if (topic.toLowerCase().includes('therap') || topic.toLowerCase().includes('treatment') || topic.toLowerCase().includes('clinical')) {
+                    sector = 'Applications';
+                } else if (topic.toLowerCase().includes('technique') || topic.toLowerCase().includes('editing') || topic.toLowerCase().includes('method')) {
+                    sector = 'Methods';
+                } else if (topic.toLowerCase().includes('system') || topic.toLowerCase().includes('delivery')) {
+                    sector = 'Tools';
+                } else if (topic.toLowerCase().includes('effect') || topic.toLowerCase().includes('mechanism')) {
+                    sector = 'Concepts';
+                }
+                
+                const maturity = maturityLevels[Math.floor(Math.random() * 4)];
+                const angle = (i / selectedTopics.length) * 360;
+                
+                return {
+                    id: `np-${Date.now()}-${i}`,
+                    title: topic,
+                    sector: sector,
+                    maturity: maturity,
+                    maturityScore: maturityLevels.indexOf(maturity) + 1,
+                    angle: angle,
+                    endorsements: Math.floor(Math.random() * 50),
+                    reproductions: Math.floor(Math.random() * 10),
+                    citations: Math.floor(Math.random() * 100),
+                    hasData: Math.random() > 0.3,
+                    hasSoftware: Math.random() > 0.5
+                };
+            });
+        }
+
+        function drawRadar() {
+            const svg = document.getElementById('radarChart');
+            const centerX = 300;
+            const centerY = 300;
+            const maxRadius = 250;
+            
+            // Clear previous content
+            svg.innerHTML = '';
+            
+            // Draw concentric circles (maturity rings)
+            const rings = 4;
+            const ringColors = ['#d1fae5', '#dbeafe', '#fed7aa', '#fee2e2'];
+            const ringLabels = ['Ready to Use', 'Evaluate', 'Monitor', 'Open Questions'];
+            
+            for (let i = rings - 1; i >= 0; i--) {
+                const radius = (maxRadius / rings) * (i + 1);
+                
+                // Ring background
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', centerX);
+                circle.setAttribute('cy', centerY);
+                circle.setAttribute('r', radius);
+                circle.setAttribute('fill', ringColors[i]);
+                circle.setAttribute('fill-opacity', '0.3');
+                circle.setAttribute('stroke', '#e5e7eb');
+                circle.setAttribute('stroke-width', '2');
+                svg.appendChild(circle);
+            }
+            
+            // Add ring labels
+            for (let i = 0; i < rings; i++) {
+                const radius = (maxRadius / rings) * (i + 1);
+                const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                label.setAttribute('x', centerX);
+                label.setAttribute('y', centerY - radius + 15);
+                label.setAttribute('text-anchor', 'middle');
+                label.setAttribute('fill', '#6b7280');
+                label.setAttribute('font-size', '12');
+                label.textContent = ringLabels[i];
+                svg.appendChild(label);
+            }
+            
+            // Draw sector lines
+            const sectors = ['Concepts', 'Methods', 'Tools', 'Applications'];
+            sectors.forEach((sector, i) => {
+                const angle = (i / sectors.length) * 2 * Math.PI - Math.PI / 2;
+                const x2 = centerX + maxRadius * Math.cos(angle);
+                const y2 = centerY + maxRadius * Math.sin(angle);
+                
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', centerX);
+                line.setAttribute('y1', centerY);
+                line.setAttribute('x2', x2);
+                line.setAttribute('y2', y2);
+                line.setAttribute('stroke', '#e5e7eb');
+                line.setAttribute('stroke-width', '1');
+                line.setAttribute('stroke-dasharray', '5,5');
+                svg.appendChild(line);
+                
+                // Sector label with icons
+                const labelX = centerX + (maxRadius + 30) * Math.cos(angle);
+                const labelY = centerY + (maxRadius + 30) * Math.sin(angle);
+                
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', labelX);
+                text.setAttribute('y', labelY);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('fill', '#374151');
+                text.setAttribute('font-weight', '600');
+                text.setAttribute('font-size', '14');
+                
+                // Add emoji icons for each sector
+                const sectorIcons = {
+                    'Concepts': '💡 ',
+                    'Methods': '🔬 ',
+                    'Tools': '🛠️ ',
+                    'Applications': '🚀 '
+                };
+                text.textContent = sectorIcons[sector] + sector;
+                svg.appendChild(text);
+            });
+            
+            // Plot research items
+            const dotColors = {
+                'ready': '#10b981',
+                'evaluate': '#3b82f6',
+                'monitor': '#f59e0b',
+                'rethink': '#ff6b6b'
+            };
+            
+            radarData.forEach((item, i) => {
+                const angleRad = (item.angle * Math.PI) / 180 - Math.PI / 2;
+                const ringRadius = (maxRadius / rings) * item.maturityScore;
+                
+                // Add some random offset to prevent overlap
+                const offset = (Math.random() - 0.5) * 20;
+                const x = centerX + (ringRadius + offset) * Math.cos(angleRad);
+                const y = centerY + (ringRadius + offset) * Math.sin(angleRad);
+                
+                // Create group for item
+                const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                g.setAttribute('class', 'radar-item');
+                g.style.cursor = 'pointer';
+                
+                // Dot
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', y);
+                circle.setAttribute('r', '8');
+                circle.setAttribute('fill', dotColors[item.maturity]);
+                circle.setAttribute('stroke', 'white');
+                circle.setAttribute('stroke-width', '2');
+                g.appendChild(circle);
+                
+                // Add hover effect
+                g.addEventListener('mouseenter', (e) => showTooltip(e, item));
+                g.addEventListener('mouseleave', hideTooltip);
+                
+                svg.appendChild(g);
+            });
+        }
+
+        function showTooltip(event, item) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = `
+                <div class="tooltip-title">${item.title}</div>
+                <div class="tooltip-details">
+                    <div>Sector: ${item.sector}</div>
+                    <div>Maturity: ${item.maturity}</div>
+                    <div>Endorsements: ${item.endorsements}</div>
+                    <div>Reproductions: ${item.reproductions}</div>
+                    <div>Has data: ${item.hasData ? 'Yes' : 'No'}</div>
+                    <div>Has software: ${item.hasSoftware ? 'Yes' : 'No'}</div>
+                </div>
+            `;
+            
+            tooltip.style.left = event.pageX + 10 + 'px';
+            tooltip.style.top = event.pageY - 10 + 'px';
+            tooltip.classList.add('show');
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').classList.remove('show');
+        }
+
+        function displayResults() {
+            const resultsList = document.getElementById('resultsList');
+            
+            const resultsHTML = radarData.map(item => `
+                <div class="result-card">
+                    <div class="result-title">${item.title}</div>
+                    <div style="color: #6b7280; font-size: 0.875rem; margin-bottom: 0.5rem;">
+                        ${item.sector} • ${item.maturity}
+                    </div>
+                    <div class="result-metrics">
+                        <div class="metric">
+                            <i class="fas fa-thumbs-up metric-icon"></i>
+                            <span>${item.endorsements}</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-redo metric-icon"></i>
+                            <span>${item.reproductions}</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-quote-right metric-icon"></i>
+                            <span>${item.citations}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            resultsList.innerHTML = `
+                <h3 style="margin-bottom: 1rem; color: var(--primary-color);">
+                    Tracked Nanopublications (${radarData.length})
+                </h3>
+                ${resultsHTML}
+            `;
+        }
+
+        function exportRadar() {
+            alert('Export functionality would download the radar as SVG/PNG and data as CSV');
+        }
+
+        function shareRadar() {
+            alert('Share functionality would generate a shareable link to your research radar');
+        }
+
+        function showUpgradeModal() {
+            alert('Premium subscription required!\n\nUpgrade to premium to:\n• Set custom maturity threshold alerts\n• Receive email notifications\n• Access advanced filtering options\n• Get priority support\n\nContact us for Pricing');
+        }
+    </script>
+</body>
+</html>

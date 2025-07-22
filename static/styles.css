@@ -12,6 +12,10 @@
     --text-dark: #193967;
     --text-muted: #6c757d;
     --bg-light: #e3ebf2;
+    --light-blue: #84c3ff;
+    --light-pink: #ffecf4;
+    --light-green: #a5cd3a;
+    --bg-green: #f3ffd4;
     --bg-dark: var(--primary-color);
 
     --success: var(--primary-light);
