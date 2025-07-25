@@ -8,14 +8,88 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./static/styles.css">
     <link rel="stylesheet" href="./static/research-radar.css">
+<!-- Mockup Banner Styles -->
+<style>
+    /* Mockup Banner Styles */
+    .mockup-banner {
+        position: fixed;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        background: #FFE5B4 !important;
+        border-bottom: 2px solid #FFA500;
+        z-index: 2147483647 !important;
+        padding: 0.75rem 1rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .mockup-banner-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        position: relative;
+    }
+    
+    .mockup-icon {
+        font-size: 1.25rem;
+        color: #8B4513;
+    }
+    
+    .mockup-text {
+        font-weight: 600;
+        color: #8B4513;
+        font-size: 1rem;
+        text-align: center;
+    }
+    
+    .mockup-close {
+        position: absolute;
+        right: 0;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        color: #8B4513;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        transition: opacity 0.2s ease;
+    }
+    
+    .mockup-close:hover {
+        opacity: 0.7;
+    }
+    
+    /* Adjust body padding for banner */
+    body {
+        padding-top: 50px !important;
+    }
+    
+    @media (max-width: 768px) {
+        .mockup-text {
+            font-size: 0.875rem;
+        }
+        
+        .mockup-icon {
+            display: none;
+        }
+    }
+</style>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WSJ3ZZ29');</script>
-<!-- End Google Tag Manager —>
+<!-- End Google Tag Manager -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSJ3ZZ29" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) —>
+<!-- End Google Tag Manager (noscript) -->
     <div class="mockup-banner">
         <div class="mockup-banner-content">
             <i class="fas fa-palette mockup-icon"></i>
