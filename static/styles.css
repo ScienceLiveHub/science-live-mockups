@@ -37,12 +37,78 @@
     box-sizing: border-box;
 }
 
+/* Mockup Banner Styles */
+.mockup-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FFE5B4;
+    border-bottom: 2px solid #FFA500;
+    z-index: 10000;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: block !important; 
+    visibility: visible !important;
+}
+
+.mockup-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.mockup-icon {
+    font-size: 1.25rem;
+    color: #8B4513;
+}
+
+.mockup-text {
+    font-weight: 600;
+    color: #8B4513;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.mockup-close {
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #8B4513;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    transition: opacity 0.2s ease;
+}
+
+.mockup-close:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .mockup-text {
+        font-size: 0.875rem;
+    }
+    
+    .mockup-icon {
+        display: none;
+    }
+}
+/*End of Mockup banner */
+
 body {
     font-family: 'Inter', system-ui, sans-serif;
     background: var(--primary-color);
     min-height: 100vh;
     color: var(--gray-900);
     line-height: 1.6;
+    padding-top: 50px;
 }
 
 .container {
@@ -564,6 +630,7 @@ body {
 
         /* Navigation Bar Styles */
         .navbar {
+    top: 50px;
             background: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             position: -webkit-sticky;
